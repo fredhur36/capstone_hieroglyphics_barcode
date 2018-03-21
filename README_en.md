@@ -28,6 +28,7 @@ Thus the sticker should not be changed. It should have square shape(or, any shap
 >  4) Write the result(key of the photo) on the request node. (Use key of the photo instead of message to make it editable)
 5. When request node is updated, iPhone gets the result from the request node.
 6. Follow the key of the photo and print out the result.
+7. remove the request
 
 
 ## Show the list of stickers and edit the message
