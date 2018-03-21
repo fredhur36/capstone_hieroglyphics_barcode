@@ -14,19 +14,20 @@ Thus the sticker should not be changed. It should have square shape(or, any shap
 2. Or choose a photo from gallery
 3. Take a message input
 4. Update the database with a photo and message.
-  It is done by writing a User(possibly with the User key) - photoURL on Requests table in the database.
+  It is done by writing a photoURL and a message on Stickers/user in the database.
 
 
 ## Detect the sticker and print out the message
 1. Take a photo of the sticker
 2. Or choose a photo from gallery
-3. Find the sticker in the database that is the same with the photo user took.
+3. Write a request with User key and a photo URL on Requests table in the database.
+4. Find the sticker in the database that is the same with the photo user took.
 >  1) Python keeps checking the length of the Requests table in the database.
 >  2) When it increases, read the new request.
 >  3) Checks whether there is a sticker in the database that is the same with the photo user had taken.
 >  4) Write the result(key of the photo) on the request node. (Use key of the photo instead of message to make it editable)
-4. When request node is updated, iPhone gets the result from the request node.
-5. Follow the key of the photo and print out the result.
+5. When request node is updated, iPhone gets the result from the request node.
+6. Follow the key of the photo and print out the result.
 
 
 ## Show the list of stickers and edit the message
