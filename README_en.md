@@ -38,6 +38,6 @@ Thus the sticker should not be changed. It should have square shape(or, any shap
 ## Database structure
 ![alt text](/DB_structure.png )
 
-## Additional functions
-* sharing the sticker
-  To do this, we need to save the data on the photo that who is linked with that sticker
+## Additional functions(If time permits)
+* sharing the sticker.  
+  To do this, we need to save the data on the photo that who is linked with that sticker.
