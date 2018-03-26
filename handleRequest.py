@@ -28,13 +28,13 @@ print(data)
 for re in data :
     userKey = data[re]['from']
     rPhoto = data[re]['photoURL']
-    file_name = 'rPhoto.png'
-    file_path = "/" + userKey
-    print(re)
+    file_name = 'Photo.png'
+    file_path = "\\" + userKey
+
+
+    urllib.request.urlretrieve(rPhoto, 'C:/Users/Hye-lee/Desktop' + file_path + "/" + file_name) # download the photo user sent to the folder of userKey
 
     '''
-    urllib.request.urlretrieve(rPhoto, file_path + "/" + file_name) # download the photo user sent to the folder of userKey
-
     ##### Image Comparison ####
     #Find the sticker that is the same with photo user sent.
     # if found -> return the stickerKey
@@ -56,6 +56,6 @@ for re in data :
 
     # Post the result(photoKey or error message) on the database
     data = {'from': userKey, 'photoURL': rPhoto, 'result' : stickerKey }
-    requests.post(firebase_url + '/' + table + '/' + re + '.json', data=json.dumps(data))
+    requests.post(firebase_url + '/' + table + '.json', data=json.dumps(data))
 
     #print(userKey, rPhoto)

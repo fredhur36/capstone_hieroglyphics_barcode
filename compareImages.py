@@ -38,7 +38,7 @@ def featureMatching(source_img, dest_img):  # source image 와 dest_img를 피�
 def findMatch(UserKey, rPhoto) :
     os.chdir("./" + UserKey) #UserKey folder로 이동
     similarStickers =[] #FeatureMatching의 결과를 넣을 list 생성.(photoKey, 매치점의 수)의 형태로 저장된다.
-    for file in glob.glob("*.jpg"): # 폴더 내의 모든 사진 파일에 대해)
+    for file in glob.glob("*.jpg"): # 폴더 내의 모든 사진 파일에 대해
         similarStickers.append(featureMatching(rPhoto, file))
 
     similarStickers.sort(key = lambda sticker : sticker[1])
