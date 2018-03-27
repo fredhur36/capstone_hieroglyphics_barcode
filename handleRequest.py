@@ -25,6 +25,8 @@ print(data)
 # Write the stickerKey on the database
 #################################################
 
+updatedRequests=dict() #generate a dictionary of requests that are processed.
+
 for re in data :
     userKey = data[re]['from']
     rPhoto = data[re]['photoURL']
@@ -50,12 +52,13 @@ for re in data :
     ################################################
     # Yet implemented
 
-    #Delete the existing information
-    r = requests.delete(firebase_url + '/' + table + '/' + re + '.json')
-    stickerKey='test result'
+    stickerKey = 'test result'
 
-    # Post the result(photoKey or error message) on the database
+    # Put the processed request in the newRequests. This is done to avoid modifying the list that we iterate.
     data = {'from': userKey, 'photoURL': rPhoto, 'result' : stickerKey }
-    requests.post(firebase_url + '/' + table + '.json', data=json.dumps(data))
+    updatedRequests[re]=data
 
-    #print(userKey, rPhoto)
+    #Delete the existing information
+    requests.delete(firebase_url + '/' + table + '/' + re + '.json')
+
+requests.post(firebase_url + '/' + table + '.json', data=json.dumps(updatedRequests))     # Post the result(photoKey or error message) on the database
