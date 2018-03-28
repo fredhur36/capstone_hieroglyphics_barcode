@@ -21,7 +21,7 @@ data = json.loads(r.text)
 for re in data.keys() :
     userKey = data[re]['from']
     rPhoto = data[re]['photoURL']
-    file_name = 'Photo.png'
+    file_name = 'rPhoto.png'
     file_path = "/" + userKey
 
 
