@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Create two view controllers and pass them to pagingViewcontroller.
-        let viewControllers = (0...2).map { MainViewController(index: $0) }
+        let viewControllers = (0...1).map { MainViewController(index: $0) }
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         
         // Add created view controllers

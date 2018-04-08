@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
         title = "Recognize"
         
         // Camera and the sign where to put the sticker in.
+        // Camera button and Button to the storage
+        
         
         // Change label into the view
         view.addSubview(label)
