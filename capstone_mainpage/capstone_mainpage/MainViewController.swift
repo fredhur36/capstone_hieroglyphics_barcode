@@ -13,6 +13,9 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         title = "Recognize"
         
+        let label = UILabel(frame : .zero)
+        label.text="\(title)"
+        
         // Camera and the sign where to put the sticker in.
         // Camera button and Button to the storage
         

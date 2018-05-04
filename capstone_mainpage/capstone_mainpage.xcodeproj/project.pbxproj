@@ -17,6 +17,7 @@
 		9334DADE2079AF9500B57579 /* capstone_mainpageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DADD2079AF9500B57579 /* capstone_mainpageTests.swift */; };
 		9334DAE92079AF9500B57579 /* capstone_mainpageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAE82079AF9500B57579 /* capstone_mainpageUITests.swift */; };
 		9334DAF7207A06B200B57579 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAF6207A06B200B57579 /* MainViewController.swift */; };
+		9334DAF9209CE57200B57579 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAF8209CE57200B57579 /* UIView+constraints.swift */; };
 		B4331B56BD8DBDC96ACA7939 /* libPods-capstone_mainpageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF6C1BA24EA96376D3849CA /* libPods-capstone_mainpageTests.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9334DAE82079AF9500B57579 /* capstone_mainpageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capstone_mainpageUITests.swift; sourceTree = "<group>"; };
 		9334DAEA2079AF9500B57579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9334DAF6207A06B200B57579 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9334DAF8209CE57200B57579 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		94FDAF604011BB894555F229 /* Pods-capstone_mainpage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capstone_mainpage.release.xcconfig"; path = "Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage.release.xcconfig"; sourceTree = "<group>"; };
 		A8CDF1155B143F1B3ABA2DC2 /* Pods-capstone_mainpageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capstone_mainpageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-capstone_mainpageTests/Pods-capstone_mainpageTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE4EC600DB5ED5C24D154B3F /* Pods-capstone_mainpageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capstone_mainpageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-capstone_mainpageUITests/Pods-capstone_mainpageUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				9334DACF2079AF9500B57579 /* Assets.xcassets */,
 				9334DAD12079AF9500B57579 /* LaunchScreen.storyboard */,
 				9334DAD42079AF9500B57579 /* Info.plist */,
+				9334DAF8209CE57200B57579 /* UIView+constraints.swift */,
 			);
 			path = capstone_mainpage;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				9334DACB2079AF9500B57579 /* ViewController.swift in Sources */,
 				9334DAC92079AF9500B57579 /* AppDelegate.swift in Sources */,
 				9334DAF7207A06B200B57579 /* MainViewController.swift in Sources */,
+				9334DAF9209CE57200B57579 /* UIView+constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
