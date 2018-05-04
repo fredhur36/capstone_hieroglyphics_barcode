@@ -1,4 +1,3 @@
-//
 //  mainViewController.swift
 //  capstone_mainpage
 //
@@ -6,6 +5,7 @@
 //  Copyright © 2018년 이혜리. All rights reserved.
 //
 
+import UIKit
 
 class MainViewController: UIViewController {
     
@@ -15,12 +15,13 @@ class MainViewController: UIViewController {
         
         let label = UILabel(frame : .zero)
         label.text="\(title)"
+        label.sizeToFit()
         
         // Camera and the sign where to put the sticker in.
         // Camera button and Button to the storage
         
-        let cameraButton = UIButton()
-        let storageButton = UIButton()
+        //let cameraButton = UIButton()
+        //let storageButton = UIButton()
         
         // Change label into the view
         view.addSubview(label)
