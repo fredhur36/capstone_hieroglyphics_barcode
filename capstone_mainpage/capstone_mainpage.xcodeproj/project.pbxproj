@@ -131,11 +131,11 @@
 				9334DAC82079AF9500B57579 /* AppDelegate.swift */,
 				9334DACA2079AF9500B57579 /* ViewController.swift */,
 				9334DAF6207A06B200B57579 /* MainViewController.swift */,
+				9334DAF8209CE57200B57579 /* UIView+constraints.swift */,
 				9334DACC2079AF9500B57579 /* Main.storyboard */,
 				9334DACF2079AF9500B57579 /* Assets.xcassets */,
 				9334DAD12079AF9500B57579 /* LaunchScreen.storyboard */,
 				9334DAD42079AF9500B57579 /* Info.plist */,
-				9334DAF8209CE57200B57579 /* UIView+constraints.swift */,
 			);
 			path = capstone_mainpage;
 			sourceTree = "<group>";

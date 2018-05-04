@@ -19,12 +19,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //add Horizontal StackView
+        //let StackView = UIStackView()
+        //StackView.axis = .vertical
+        
+
         // Create two view controllers and pass them to pagingViewcontroller.
         let viewControllers = (0...1).map { MainViewController(index: $0) }
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         
+        
+        // Camera and the sign where to put the sticker in.
+        // Camera button and Button to the storage
+        //let cameraButton = UIButton()
+        //let storageButton = UIButton()
+
+
         // Add created view controllers
         addChildViewController(pagingViewController)
+        //view.addSubview(StackView)
+        //StackView.addArrangedSubview(label)
         view.addSubview(pagingViewController.view)
         view.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)

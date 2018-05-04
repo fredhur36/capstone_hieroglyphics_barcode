@@ -13,16 +13,13 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         title = "Recognize"
         
+        //Put camera screen here instead of label.
+        
         let label = UILabel(frame : .zero)
-        label.text="\(title)"
+        label.text="test"
         label.sizeToFit()
-        
-        // Camera and the sign where to put the sticker in.
-        // Camera button and Button to the storage
-        
-        //let cameraButton = UIButton()
-        //let storageButton = UIButton()
-        
+
+                
         // Change label into the view
         view.addSubview(label)
         view.constrainCentered(label)
