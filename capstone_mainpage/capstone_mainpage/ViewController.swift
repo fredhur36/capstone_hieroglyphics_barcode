@@ -44,36 +44,48 @@ class ViewController: UIViewController {
         
         cameraScreen.addSubview(label)
         cameraScreen.constrainCentered(label)
-        
         cameraScreen.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addSubview(cameraScreen)
+        cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
+        cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
+        cameraScreen.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
+       
         // View for cameraShot button and storage button
         let bottomView = UIView()
         bottomView.backgroundColor = UIColor.red
         
-        /*
+        view.addSubview(bottomView)
+        bottomView.topAnchor.constraint(equalTo : cameraScreen.bottomAnchor).isActive = true
+        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+        bottomView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        
         // Camera Shot Button and Storage Button
         let cameraShotButton = UIButton(type : .custom)
         cameraShotButton.backgroundColor = UIColor.green
         cameraShotButton.clipsToBounds = true
+        bottomView.addSubview(cameraShotButton)
+        
         cameraShotButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
         cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
         cameraShotButton.sizeToFit()
         
+        
         let storageButton = UIButton(type : .custom)
         storageButton.setTitle("Storage", for : .normal)
+        storageButton.setTitleColor(UIColor.black, for: .normal)
         storageButton.backgroundColor = UIColor.white
         storageButton.clipsToBounds = false
-        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : 100).isActive = true
+         bottomView.addSubview(storageButton)
+        
+        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : -50).isActive = true
         storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
         storageButton.sizeToFit()
-         */
-        //bottomView.addSubview(cameraShotButton)
-        //bottomView.addSubview(storageButton)
-
-        //cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
-        //storageButton.translatesAutoresizingMaskIntoConstraints = false
         
+        
+        cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
+        storageButton.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
  
         
@@ -84,8 +96,6 @@ class ViewController: UIViewController {
         //let parchment = pagingViewController.view!
         
         
-        view.addSubview(cameraScreen)
-        view.addSubview(bottomView)
         
         
         //view.addSubview(parchment)
@@ -93,15 +103,8 @@ class ViewController: UIViewController {
        //addChildViewController(pagingViewController)
         
         //StackView.addArrangedSubview(cameraScreen)
-        cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
-        cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
-        cameraScreen.heightAnchor.constraint(equalToConstant: 300).isActive = true
-       
-        bottomView.topAnchor.constraint(equalTo : cameraScreen.bottomAnchor).isActive = true
-        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
-        bottomView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
-       // bottomView.heightAnchor.constraint(equalToConstant : 500).isActive = true
         
+       
         
         /*
         //StackView.addArrangedSubview(parchment)
