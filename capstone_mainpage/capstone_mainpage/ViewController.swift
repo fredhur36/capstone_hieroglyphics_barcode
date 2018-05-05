@@ -33,6 +33,60 @@ class ViewController: UIViewController {
         //StackView.heightAnchor.constraint(equalTo:view.heightAnchor).isActive = true
         //StackView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
         
+        
+        // View for cameraShot button and storage button
+        let bottomView = UIView()
+        bottomView.backgroundColor = UIColor.red
+        
+        view.addSubview(bottomView)
+        bottomView.bottomAnchor.constraint(equalTo : view.bottomAnchor).isActive = true
+        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+        bottomView.heightAnchor.constraint(equalToConstant : 100).isActive = true
+        
+        // Camera Shot Button and Storage Button
+        let cameraShotButton = UIButton(type : .custom)
+        cameraShotButton.backgroundColor = UIColor.green
+        cameraShotButton.clipsToBounds = true
+        bottomView.addSubview(cameraShotButton)
+        
+        cameraShotButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
+        cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
+        cameraShotButton.sizeToFit()
+        
+        let storageButton = UIButton(type : .custom)
+        storageButton.setTitle("Storage", for : .normal)
+        storageButton.setTitleColor(UIColor.black, for: .normal)
+        storageButton.backgroundColor = UIColor.white
+        storageButton.clipsToBounds = false
+        bottomView.addSubview(storageButton)
+        
+        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : -20).isActive = true
+        storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
+        storageButton.sizeToFit()
+        
+        
+        cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
+        storageButton.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        // parchment
+        // Create two view controllers and pass them to pagingViewcontroller.
+        let viewControllers = (0...1).map { MainViewController(index: $0) }
+        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        let parchment = pagingViewController.view!
+        
+        view.addSubview(parchment)
+        parchment.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
+        parchment.heightAnchor.constraint(equalToConstant : 40).isActive = true
+        parchment.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Add created view controllers
+        addChildViewController(pagingViewController)
+        pagingViewController.didMove(toParentViewController: self)
+        
+        
+        
         // Put camera here
         let cameraScreen = UIView()
         cameraScreen.backgroundColor = UIColor.gray
@@ -49,76 +103,30 @@ class ViewController: UIViewController {
         view.addSubview(cameraScreen)
         cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
         cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
-        cameraScreen.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        cameraScreen.bottomAnchor.constraint(equalTo : parchment.topAnchor).isActive = true
+        
+        
+        
         
        
-        // View for cameraShot button and storage button
-        let bottomView = UIView()
-        bottomView.backgroundColor = UIColor.red
-        
-        view.addSubview(bottomView)
-        bottomView.topAnchor.constraint(equalTo : cameraScreen.bottomAnchor).isActive = true
-        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
-        bottomView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
-        
-        // Camera Shot Button and Storage Button
-        let cameraShotButton = UIButton(type : .custom)
-        cameraShotButton.backgroundColor = UIColor.green
-        cameraShotButton.clipsToBounds = true
-        bottomView.addSubview(cameraShotButton)
-        
-        cameraShotButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
-        cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
-        cameraShotButton.sizeToFit()
-        
-        
-        let storageButton = UIButton(type : .custom)
-        storageButton.setTitle("Storage", for : .normal)
-        storageButton.setTitleColor(UIColor.black, for: .normal)
-        storageButton.backgroundColor = UIColor.white
-        storageButton.clipsToBounds = false
-         bottomView.addSubview(storageButton)
-        
-        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : -50).isActive = true
-        storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
-        storageButton.sizeToFit()
-        
-        
-        cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
-        storageButton.translatesAutoresizingMaskIntoConstraints = false
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
+       
  
         
-        // parchment
-        // Create two view controllers and pass them to pagingViewcontroller.
-        //let viewControllers = (0...1).map { MainViewController(index: $0) }
-        //let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
-        //let parchment = pagingViewController.view!
-        
-        
-        
-        
-        //view.addSubview(parchment)
-        // Add created view controllers
-       //addChildViewController(pagingViewController)
         
         //StackView.addArrangedSubview(cameraScreen)
         
        
         
-        /*
-        //StackView.addArrangedSubview(parchment)
-        parchment.topAnchor.constraint(equalTo:cameraScreen.bottomAnchor).isActive = true
-        //StackView.addArrangedSubview(bottomView)
-        bottomView.topAnchor.constraint(equalTo:parchment.bottomAnchor).isActive = true
         
-        */
+        //StackView.addArrangedSubview(parchment)
+
+        //StackView.addArrangedSubview(bottomView)
 
         
 
         //view.addSubview(pagingViewController.view)
         //view.constrainToEdges(pagingViewController.view)
-        //pagingViewController.didMove(toParentViewController: self)
+        
     }
     
     
