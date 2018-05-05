@@ -36,9 +36,14 @@ class ViewController: UIViewController {
         // Put camera here
         let cameraScreen = UIView()
         cameraScreen.backgroundColor = UIColor.gray
-        let label = UILabel()
+        
+        let label = UILabel(frame :.zero)
         label.text = "cameraScreen"
+        label.textColor = UIColor.white
+        label.sizeToFit()
+        
         cameraScreen.addSubview(label)
+        cameraScreen.constrainCentered(label)
         //cameraScreen.constrainCentered(label)
         //cameraScreen.constrainToEdges(view)
         //View for cameraShotButton and storageButton
