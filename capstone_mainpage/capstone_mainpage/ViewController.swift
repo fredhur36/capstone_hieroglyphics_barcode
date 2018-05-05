@@ -44,51 +44,64 @@ class ViewController: UIViewController {
         
         cameraScreen.addSubview(label)
         cameraScreen.constrainCentered(label)
-        //cameraScreen.constrainCentered(label)
-        //cameraScreen.constrainToEdges(view)
-        //View for cameraShotButton and storageButton
+        
         cameraScreen.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        // View for cameraShot button and storage button
         let bottomView = UIView()
         bottomView.backgroundColor = UIColor.red
         
-        let label2 = UILabel()
-        label2.text = "bottomView"
-        bottomView.addSubview(label2)
-        bottomView.constrainCentered(label2)
-        
-        let cameraShotButton = UIButton()
-        cameraShotButton.backgroundColor = UIColor.white
+        /*
+        // Camera Shot Button and Storage Button
+        let cameraShotButton = UIButton(type : .custom)
+        cameraShotButton.backgroundColor = UIColor.green
         cameraShotButton.clipsToBounds = true
-
-        let storageButton = UIButton()
+        cameraShotButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
+        cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
+        cameraShotButton.sizeToFit()
+        
+        let storageButton = UIButton(type : .custom)
         storageButton.setTitle("Storage", for : .normal)
         storageButton.backgroundColor = UIColor.white
         storageButton.clipsToBounds = false
+        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : 100).isActive = true
+        storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
+        storageButton.sizeToFit()
+         */
+        //bottomView.addSubview(cameraShotButton)
+        //bottomView.addSubview(storageButton)
 
+        //cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
+        //storageButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+ 
+        
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
-        let viewControllers = (0...1).map { MainViewController(index: $0) }
-        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        //let viewControllers = (0...1).map { MainViewController(index: $0) }
+        //let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         //let parchment = pagingViewController.view!
         
         
         view.addSubview(cameraScreen)
-        
-        /*
-        view.addSubview(parchment)
         view.addSubview(bottomView)
-        view.addSubview(cameraShotButton)
-        view.addSubview(storageButton)
-         */
+        
+        
+        //view.addSubview(parchment)
         // Add created view controllers
-        addChildViewController(pagingViewController)
+       //addChildViewController(pagingViewController)
         
         //StackView.addArrangedSubview(cameraScreen)
         cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
         cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
         cameraScreen.heightAnchor.constraint(equalToConstant: 300).isActive = true
+       
+        bottomView.topAnchor.constraint(equalTo : cameraScreen.bottomAnchor).isActive = true
+        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+        bottomView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+       // bottomView.heightAnchor.constraint(equalToConstant : 500).isActive = true
+        
         
         /*
         //StackView.addArrangedSubview(parchment)
@@ -102,7 +115,7 @@ class ViewController: UIViewController {
 
         //view.addSubview(pagingViewController.view)
         //view.constrainToEdges(pagingViewController.view)
-        pagingViewController.didMove(toParentViewController: self)
+        //pagingViewController.didMove(toParentViewController: self)
     }
     
     
