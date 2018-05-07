@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CBarcode.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:capstone_mainpage.xcodeproj">
    </FileRef>
    <FileRef
