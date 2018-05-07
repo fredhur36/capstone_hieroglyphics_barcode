@@ -14,9 +14,12 @@ import numpy as np
 import cv2 
 import glob, os
 
+base_path = "C:/Users/Hye-lee/Desktop"
+
 def featureMatching(source_img, dest_img):  # source image 와 dest_img를 피처매칭 해준다 -> 매치점의 개수를 return한다.
     img1 = cv2.imread(source_img, cv2.IMREAD_GRAYSCALE)  # read source_img(흑백으로 읽는다)
     img2 = cv2.imread(dest_img, cv2.IMREAD_GRAYSCALE)
+
     res = None
     # 피처매칭을 위한 변수들을 설정해줍니다.
     orb = cv2.ORB_create()
@@ -36,14 +39,18 @@ def featureMatching(source_img, dest_img):  # source image 와 dest_img를 피�
     return (dest_img, len(best))
 
 def findMatch(UserKey, rPhoto) :
-    os.chdir("./" + UserKey) #UserKey folder로 이동
+    os.chdir(base_path + "/" + UserKey) #UserKey folder로 이동
     similarStickers =[] #FeatureMatching의 결과를 넣을 list 생성.(photoKey, 매치점의 수)의 형태로 저장된다.
-    for file in glob.glob("*.jpg"): # 폴더 내의 모든 사진 파일에 대해
-        similarStickers.append(featureMatching(rPhoto, file))
+
+    for file in glob.glob("*.png"): # 폴더 내의 모든 사진 파일에 대해
+        a = featureMatching('rPhoto.png', file)
+        similarStickers.append(a)
 
     similarStickers.sort(key = lambda sticker : sticker[1])
     similarStickers.reverse()
+    ##print(similarStickers)
+
     if(similarStickers[1][1]/similarStickers[0][1] > 0.5)  :
         return similarStickers[1][0]
     else :
-        return ""
+        return "No such match"
