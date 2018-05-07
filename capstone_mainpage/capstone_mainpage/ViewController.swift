@@ -71,6 +71,10 @@ class ViewController: UIViewController {
         addChildViewController(pagingViewController)
         pagingViewController.didMove(toParentViewController: self)
  
+   
+        //move parchment to the bottom
+        pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
+        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:pagingViewController.view.bottomAnchor).isActive = true
         
         /*
         // Put camera here
@@ -91,27 +95,6 @@ class ViewController: UIViewController {
         cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
         cameraScreen.bottomAnchor.constraint(equalTo : parchment.topAnchor).isActive = true
         */
-        
-        
-        
-       
-       
- 
-        
-        
-        //StackView.addArrangedSubview(cameraScreen)
-        
-       
-        
-        
-        //StackView.addArrangedSubview(parchment)
-
-        //StackView.addArrangedSubview(bottomView)
-
-        
-
-        //view.addSubview(pagingViewController.view)
-        //view.constrainToEdges(pagingViewController.view)
         
     }
     
