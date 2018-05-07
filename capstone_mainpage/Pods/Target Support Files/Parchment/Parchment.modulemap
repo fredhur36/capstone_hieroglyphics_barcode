@@ -1,4 +1,4 @@
-module Parchment [system] {
+framework module Parchment {
   umbrella header "Parchment-umbrella.h"
 
   export *

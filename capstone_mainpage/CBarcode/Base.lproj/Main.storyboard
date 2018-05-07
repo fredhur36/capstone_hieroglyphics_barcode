@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-1063" y="220"/>
         </scene>
-        <!--View Controller-->
+        <!--Login And Register Button Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginAndRegisterButtonController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,12 +243,9 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleDurationWhenSelected">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="reTake:" destination="Fp3-t8-UIN" eventType="touchUpInside" id="aep-R4-C9b"/>
+                                            <action selector="create:" destination="Fp3-t8-UIN" eventType="touchUpInside" id="Las-ym-AD8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-by-sgg" customClass="PMSuperButton" customModule="PMSuperButton">
@@ -266,7 +263,7 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -303,8 +300,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="sendImage:" destination="Fp3-t8-UIN" eventType="touchUpInside" id="YMS-o1-FRA"/>
-                                            <segue destination="jKt-uC-Z4s" kind="push" id="92L-hF-tph"/>
+                                            <action selector="scan:" destination="Fp3-t8-UIN" eventType="touchUpInside" id="N7n-vj-Lae"/>
                                         </connections>
                                     </button>
                                 </subviews>

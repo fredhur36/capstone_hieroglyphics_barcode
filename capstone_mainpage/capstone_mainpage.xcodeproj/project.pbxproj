@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38FEED886002DBFA7497FE08 /* libPods-capstone_mainpage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774D959775C350D547B2602D /* libPods-capstone_mainpage.a */; };
+		106067984EEAE6F46F7715CA /* Pods_capstone_mainpage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43B3012A49607D0D1CAD978 /* Pods_capstone_mainpage.framework */; };
+		55CE909820A02EDF008A64F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909420A02EDE008A64F1 /* ViewController.swift */; };
+		55CE909920A02EDF008A64F1 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909520A02EDE008A64F1 /* UIView+constraints.swift */; };
+		55CE909A20A02EDF008A64F1 /* RecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */; };
+		55CE909B20A02EDF008A64F1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909720A02EDE008A64F1 /* RegisterViewController.swift */; };
 		9334DAC92079AF9500B57579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAC82079AF9500B57579 /* AppDelegate.swift */; };
-		9334DACB2079AF9500B57579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DACA2079AF9500B57579 /* ViewController.swift */; };
 		9334DACE2079AF9500B57579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9334DACC2079AF9500B57579 /* Main.storyboard */; };
 		9334DAD02079AF9500B57579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9334DACF2079AF9500B57579 /* Assets.xcassets */; };
 		9334DAD32079AF9500B57579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9334DAD12079AF9500B57579 /* LaunchScreen.storyboard */; };
 		9334DADE2079AF9500B57579 /* capstone_mainpageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DADD2079AF9500B57579 /* capstone_mainpageTests.swift */; };
 		9334DAE92079AF9500B57579 /* capstone_mainpageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAE82079AF9500B57579 /* capstone_mainpageUITests.swift */; };
-		9334DAF7207A06B200B57579 /* RecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAF6207A06B200B57579 /* RecognizeViewController.swift */; };
-		9334DAF9209CE57200B57579 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DAF8209CE57200B57579 /* UIView+constraints.swift */; };
-		9334DB3B209DAC1300B57579 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334DB3A209DAC1300B57579 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +39,12 @@
 
 /* Begin PBXFileReference section */
 		362A7C0F572752759910B343 /* libPods-capstone_mainpageUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capstone_mainpageUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		774D959775C350D547B2602D /* libPods-capstone_mainpage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capstone_mainpage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55CE909420A02EDE008A64F1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55CE909520A02EDE008A64F1 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeViewController.swift; sourceTree = "<group>"; };
+		55CE909720A02EDE008A64F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 		9334DAC52079AF9500B57579 /* capstone_mainpage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capstone_mainpage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9334DAC82079AF9500B57579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9334DACA2079AF9500B57579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9334DACD2079AF9500B57579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9334DACF2079AF9500B57579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9334DAD22079AF9500B57579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,10 +55,8 @@
 		9334DAE42079AF9500B57579 /* capstone_mainpageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capstone_mainpageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9334DAE82079AF9500B57579 /* capstone_mainpageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capstone_mainpageUITests.swift; sourceTree = "<group>"; };
 		9334DAEA2079AF9500B57579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9334DAF6207A06B200B57579 /* RecognizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeViewController.swift; sourceTree = "<group>"; };
-		9334DAF8209CE57200B57579 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
-		9334DB3A209DAC1300B57579 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		94FDAF604011BB894555F229 /* Pods-capstone_mainpage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capstone_mainpage.release.xcconfig"; path = "Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage.release.xcconfig"; sourceTree = "<group>"; };
+		E43B3012A49607D0D1CAD978 /* Pods_capstone_mainpage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capstone_mainpage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF6C1BA24EA96376D3849CA /* libPods-capstone_mainpageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capstone_mainpageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3B0D427F172C8012BBF9DF /* Pods-capstone_mainpage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capstone_mainpage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FEED886002DBFA7497FE08 /* libPods-capstone_mainpage.a in Frameworks */,
+				106067984EEAE6F46F7715CA /* Pods_capstone_mainpage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +90,9 @@
 		1DE53E4308E3F8D2F08431BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				774D959775C350D547B2602D /* libPods-capstone_mainpage.a */,
 				FDF6C1BA24EA96376D3849CA /* libPods-capstone_mainpageTests.a */,
 				362A7C0F572752759910B343 /* libPods-capstone_mainpageUITests.a */,
+				E43B3012A49607D0D1CAD978 /* Pods_capstone_mainpage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,11 +122,11 @@
 		9334DAC72079AF9500B57579 /* capstone_mainpage */ = {
 			isa = PBXGroup;
 			children = (
+				55CE909420A02EDE008A64F1 /* ViewController.swift */,
+				55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */,
+				55CE909720A02EDE008A64F1 /* RegisterViewController.swift */,
+				55CE909520A02EDE008A64F1 /* UIView+constraints.swift */,
 				9334DAC82079AF9500B57579 /* AppDelegate.swift */,
-				9334DACA2079AF9500B57579 /* ViewController.swift */,
-				9334DAF6207A06B200B57579 /* RecognizeViewController.swift */,
-				9334DB3A209DAC1300B57579 /* RegisterViewController.swift */,
-				9334DAF8209CE57200B57579 /* UIView+constraints.swift */,
 				9334DACC2079AF9500B57579 /* Main.storyboard */,
 				9334DACF2079AF9500B57579 /* Assets.xcassets */,
 				9334DAD12079AF9500B57579 /* LaunchScreen.storyboard */,
@@ -173,6 +173,8 @@
 				9334DAC12079AF9500B57579 /* Sources */,
 				9334DAC22079AF9500B57579 /* Frameworks */,
 				9334DAC32079AF9500B57579 /* Resources */,
+				53EF365D3CB563B498A56EC3 /* [CP] Embed Pods Frameworks */,
+				6B6DFD94DAE75B0B150CED5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +295,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		53EF365D3CB563B498A56EC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B6DFD94DAE75B0B150CED5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capstone_mainpage/Pods-capstone_mainpage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7341B5B4009A03492DDEAC6E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,11 +353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9334DACB2079AF9500B57579 /* ViewController.swift in Sources */,
+				55CE909820A02EDF008A64F1 /* ViewController.swift in Sources */,
+				55CE909B20A02EDF008A64F1 /* RegisterViewController.swift in Sources */,
+				55CE909A20A02EDF008A64F1 /* RecognizeViewController.swift in Sources */,
+				55CE909920A02EDF008A64F1 /* UIView+constraints.swift in Sources */,
 				9334DAC92079AF9500B57579 /* AppDelegate.swift in Sources */,
-				9334DAF7207A06B200B57579 /* RecognizeViewController.swift in Sources */,
-				9334DB3B209DAC1300B57579 /* RegisterViewController.swift in Sources */,
-				9334DAF9209CE57200B57579 /* UIView+constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = capstone_mainpage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang.hyelee.capstone-mainpage";
@@ -505,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = capstone_mainpage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang.hyelee.capstone-mainpage";

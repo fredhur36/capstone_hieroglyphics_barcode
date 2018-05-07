@@ -8,30 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		08D68091A8EF443A71378D87 /* Pods_CBarcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E31D6EC85C95AAD0F85A36C /* Pods_CBarcode.framework */; };
-		5502F00F205E91AA001B4334 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502F00E205E91AA001B4334 /* SWRevealViewController.m */; };
+		553BC95A20A028C1002D89D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553BC95920A028C1002D89D0 /* SWRevealViewController.m */; };
 		5553AC8D2060BE5200655CF2 /* cameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553AC8C2060BE5200655CF2 /* cameraController.swift */; };
 		555C41E6205E42C10021FFD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41E5205E42C10021FFD4 /* AppDelegate.swift */; };
-		555C41E8205E42C10021FFD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41E7205E42C10021FFD4 /* ViewController.swift */; };
+		555C41E8205E42C10021FFD4 /* LoginAndRegisterButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41E7205E42C10021FFD4 /* LoginAndRegisterButtonController.swift */; };
 		555C41EB205E42C10021FFD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C41E9205E42C10021FFD4 /* Main.storyboard */; };
 		555C41ED205E42C10021FFD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555C41EC205E42C10021FFD4 /* Assets.xcassets */; };
 		555C41F0205E42C10021FFD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C41EE205E42C10021FFD4 /* LaunchScreen.storyboard */; };
 		555C41F8205E42E80021FFD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 555C41F7205E42E80021FFD4 /* GoogleService-Info.plist */; };
 		555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41F9205E53E50021FFD4 /* RegisterViewController.swift */; };
 		555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41FB205E540F0021FFD4 /* LoginViewController.swift */; };
-		9365B0F720A0185400294464 /* CBarcode in Resources */ = {isa = PBXBuildFile; fileRef = 9365B0F620A0185400294464 /* CBarcode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07DC83324708C22F4E783A37 /* Pods-CBarcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBarcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode.release.xcconfig"; sourceTree = "<group>"; };
 		0E31D6EC85C95AAD0F85A36C /* Pods_CBarcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBarcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CF7462E5A2C01C0DA4CB6B /* Pods-CBarcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBarcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode.debug.xcconfig"; sourceTree = "<group>"; };
-		5502F00D205E91AA001B4334 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../SWRevealViewController.h; sourceTree = "<group>"; };
-		5502F00E205E91AA001B4334 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../SWRevealViewController.m; sourceTree = "<group>"; };
 		5502F010205E91CC001B4334 /* CBarcode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBarcode-Bridging-Header.h"; sourceTree = "<group>"; };
+		553BC95820A028C1002D89D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../../SWRevealViewController.h; sourceTree = "<group>"; };
+		553BC95920A028C1002D89D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../../SWRevealViewController.m; sourceTree = "<group>"; };
 		5553AC8C2060BE5200655CF2 /* cameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraController.swift; sourceTree = "<group>"; };
 		555C41E2205E42C10021FFD4 /* CBarcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBarcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555C41E5205E42C10021FFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		555C41E7205E42C10021FFD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		555C41E7205E42C10021FFD4 /* LoginAndRegisterButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterButtonController.swift; sourceTree = "<group>"; };
 		555C41EA205E42C10021FFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		555C41EC205E42C10021FFD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		555C41EF205E42C10021FFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +38,6 @@
 		555C41F7205E42E80021FFD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		555C41F9205E53E50021FFD4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		555C41FB205E540F0021FFD4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9365B0F620A0185400294464 /* CBarcode */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CBarcode; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +81,11 @@
 		555C41E4205E42C10021FFD4 /* CBarcode */ = {
 			isa = PBXGroup;
 			children = (
-				9365B0F620A0185400294464 /* CBarcode */,
+				553BC95820A028C1002D89D0 /* SWRevealViewController.h */,
+				553BC95920A028C1002D89D0 /* SWRevealViewController.m */,
 				5502F010205E91CC001B4334 /* CBarcode-Bridging-Header.h */,
-				5502F00D205E91AA001B4334 /* SWRevealViewController.h */,
-				5502F00E205E91AA001B4334 /* SWRevealViewController.m */,
 				555C41E5205E42C10021FFD4 /* AppDelegate.swift */,
-				555C41E7205E42C10021FFD4 /* ViewController.swift */,
+				555C41E7205E42C10021FFD4 /* LoginAndRegisterButtonController.swift */,
 				555C41FB205E540F0021FFD4 /* LoginViewController.swift */,
 				555C41F9205E53E50021FFD4 /* RegisterViewController.swift */,
 				5553AC8C2060BE5200655CF2 /* cameraController.swift */,
@@ -122,6 +119,7 @@
 				555C41DF205E42C10021FFD4 /* Frameworks */,
 				555C41E0205E42C10021FFD4 /* Resources */,
 				68FC34389596F4C5E5A58DF0 /* [CP] Embed Pods Frameworks */,
+				ED78B7F38526FFF4201A5D05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,7 +173,6 @@
 				555C41F0205E42C10021FFD4 /* LaunchScreen.storyboard in Resources */,
 				555C41F8205E42E80021FFD4 /* GoogleService-Info.plist in Resources */,
 				555C41ED205E42C10021FFD4 /* Assets.xcassets in Resources */,
-				9365B0F720A0185400294464 /* CBarcode in Resources */,
 				555C41EB205E42C10021FFD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +214,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ED78B7F38526FFF4201A5D05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FBEDE9225E0CAA4AEC0753C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,10 +256,10 @@
 			files = (
 				555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */,
 				555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */,
-				555C41E8205E42C10021FFD4 /* ViewController.swift in Sources */,
+				555C41E8205E42C10021FFD4 /* LoginAndRegisterButtonController.swift in Sources */,
 				555C41E6205E42C10021FFD4 /* AppDelegate.swift in Sources */,
-				5502F00F205E91AA001B4334 /* SWRevealViewController.m in Sources */,
 				5553AC8D2060BE5200655CF2 /* cameraController.swift in Sources */,
+				553BC95A20A028C1002D89D0 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WYK4738CZV;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = CBarcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -407,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WYK4738CZV;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = CBarcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

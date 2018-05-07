@@ -1,4 +1,4 @@
-module Pods_capstone_mainpage [system] {
+framework module Pods_capstone_mainpage {
   umbrella header "Pods-capstone_mainpage-umbrella.h"
 
   export *

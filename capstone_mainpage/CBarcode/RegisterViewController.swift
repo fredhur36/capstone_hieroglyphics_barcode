@@ -26,6 +26,19 @@ class RegisterViewController: UIViewController {
             }
             else
             {
+                let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
+                let uid = user?.uid
+                
+                let userReference = ref.child("Users").child(uid!)
+                let values = ["email" : self.IDText.text]
+                userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                    if err != nil {
+                        print(err)
+                        return
+                    }
+                    print()
+                    
+                })
                 // register successful, move to the main menu
                 self.performSegue(withIdentifier: "toMenu", sender: self)
                 

@@ -12,6 +12,10 @@ import FirebaseStorage
 
 class cameraController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
+    var originalImage : UIImage!
+    var imageData : NSData!
+    
+    var flag = 0
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker = UIImagePickerController()
    override func viewDidLoad() {
@@ -20,13 +24,22 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
        photoPerform(self)
     }
     
-    @IBAction func reTake(_ sender: Any) {
-       
-        photoPerform(self)
-    }
-    @IBAction func sendImage(_ sender: Any) {
+
+    @IBAction func create(_ sender: Any) {
+        
+            uploadImagetoFirebase(data: imageData as NSData, type: 1)
+            
+        
         
     }
+    
+    @IBAction func scan(_ sender: Any) {
+        
+            uploadImagetoFirebase(data: imageData as NSData, type: 2)
+            
+        
+    }
+    
     
     
     
@@ -37,17 +50,6 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
         // Dispose of any resources that can be recreated.
     }
     
-    func cameraClicked(_ sender: Any) {
-        // if camera is available, load camera
-   /* if UIImagePickerController.isSourceTypeAvailable(.camera) {
-    
-    imagePicker.delegate = self
-    imagePicker.sourceType = .camera
-    imagePicker.allowsEditing = false
-    self.present(imagePicker, animated: true, completion: nil)
-    
-        }*/
-    }
     func photoPerform(_ sender: Any) {
         // if photo library is available, load it
        if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -63,35 +65,76 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         dismiss(animated: true, completion: nil)
         
-        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage, let imageData = UIImageJPEGRepresentation(originalImage, 0.8)
+       originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        {
-            uploadImagetoFirebase(data: imageData as NSData)
-       
-        }
+        imageData = UIImageJPEGRepresentation(originalImage, 0.8)! as NSData
+        
+        
+           // uploadImagetoFirebase(data: imageData as NSData, type: 1)
+ 
+ }
         
     }
     // upload the image to firebase
-    func uploadImagetoFirebase(data: NSData)
+    func uploadImagetoFirebase(data: NSData, type : Int)
     {
-        let storageRef = Storage.storage().reference(withPath: "myPics/demoPic.jpg")  // this needs to be edited later. It should make a path according to the user's id
+        let uid = Auth.auth().currentUser!.uid
+        
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(withPath: "\(uid)/" + "\(imageName).png" )
+        print(imageName)
+        let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
+        
+          // this needs to be edited later. It should make a path according to the user's id
         let uploadMetadata = StorageMetadata()
-        uploadMetadata.contentType = "image/jpeg"
-        let uploadTask = storageRef.putData(data as Data,metadata: uploadMetadata) {(metadata,error) in
+        uploadMetadata.contentType = "image/png"
+        _ = storageRef.putData(data as Data,metadata: uploadMetadata) {(metadata,error) in
             if(error != nil) {
                 print("I received an error! \(String(describing: error?.localizedDescription))")
             }else
             {
                 print("Upload complete! Here's some metadata ! \(String(describing: metadata))")
             }
+            
+            
         }
-        /*
-        uploadTask.observe(StorageTaskStatus){
-            [weak self] (snapshot) in
-            guard let strongSelf = self else { return }
-            guard let progress = snapshot.progress else { return }
-            strongSelf.progressView.progress = Float(progress.fractionCompleted)
-        }*/
-    }
-}
+        if type == 1
+        {
+            
+            
+            let userReference = ref.child("Sticker").child(uid)
+          
+            if let imageURL = uploadMetadata.downloadURL()?.absoluteString {
+                
+                let values = [ "URL" : imageURL, "message" : "temporary message"]
+                
+            
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    print(err)
+                    return
+                }
+            }
+            )
+        }
+        }
+        else{
 
+            
+            let userReference = ref.child("Request").child(uid)
+         
+                if (uploadMetadata.downloadURL()?.absoluteString) != nil {
+                    
+                    
+            let values = ["from" : uid, "photoURL" : uploadMetadata.downloadURL()!] as [String : Any]
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    print(err)
+                    return
+                }
+            }
+            )
+        }
+    }
+        
+}
