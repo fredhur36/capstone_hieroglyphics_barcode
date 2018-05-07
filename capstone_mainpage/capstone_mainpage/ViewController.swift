@@ -74,7 +74,8 @@ class ViewController: UIViewController {
    
         //move parchment to the bottom
         pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
-        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:pagingViewController.view.bottomAnchor).isActive = true
+        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor).isActive = true
+        //changed the verticalConstraint on PageView.swift
         
         /*
         // Put camera here
