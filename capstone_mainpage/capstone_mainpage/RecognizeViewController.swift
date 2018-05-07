@@ -7,23 +7,20 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class RecognizeViewController: UIViewController {
     
     init(index: Int) {
         super.init(nibName: nil, bundle: nil)
+        //view.backgroundColor = .white
         title = "Recognize"
         
-        //Put camera screen here instead of label.
-        
-        let label = UILabel(frame : .zero)
-        label.text="test"
+        let label = UILabel(frame :.zero)
+        label.text = "Recognize"
         label.sizeToFit()
-
-                
-        // Change label into the view
+        
         view.addSubview(label)
         view.constrainCentered(label)
-
+        
     }
     
     required init?(coder: NSCoder) {

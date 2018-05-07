@@ -21,19 +21,6 @@ class ViewController: UIViewController {
 
         view.backgroundColor = UIColor.blue
         
-        //add Horizontal StackView
-        //let StackView = UIStackView()
-        //StackView.axis = .vertical
-        //StackView.distribution = .fill
-        //StackView.backgroundColor = UIColor.red
-        //view.addSubview(StackView)
-        //StackView.translatesAutoresizingMaskIntoConstraints =
-        //StackView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-        //StackView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
-        //StackView.heightAnchor.constraint(equalTo:view.heightAnchor).isActive = true
-        //StackView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-        
-        
         // View for cameraShot button and storage button
         let bottomView = UIView()
         bottomView.backgroundColor = UIColor.red
@@ -41,7 +28,7 @@ class ViewController: UIViewController {
         view.addSubview(bottomView)
         bottomView.bottomAnchor.constraint(equalTo : view.bottomAnchor).isActive = true
         bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
-        bottomView.heightAnchor.constraint(equalToConstant : 100).isActive = true
+        bottomView.heightAnchor.constraint(equalToConstant : 130).isActive = true
         
         // Camera Shot Button and Storage Button
         let cameraShotButton = UIButton(type : .custom)
@@ -72,21 +59,20 @@ class ViewController: UIViewController {
         
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
-        let viewControllers = (0...1).map { MainViewController(index: $0) }
-        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        let recognizeViewController = RecognizeViewController(index: 0)
+        let registerViewController = RegisterViewController(index : 1)
+        let pagingViewController = FixedPagingViewController(viewControllers: [recognizeViewController, registerViewController])
         let parchment = pagingViewController.view!
         
-        view.addSubview(parchment)
-        parchment.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
-        parchment.heightAnchor.constraint(equalToConstant : 40).isActive = true
-        parchment.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addSubview(parchment)
+        view.constrainToEdges(parchment)
         // Add created view controllers
         addChildViewController(pagingViewController)
         pagingViewController.didMove(toParentViewController: self)
+ 
         
-        
-        
+        /*
         // Put camera here
         let cameraScreen = UIView()
         cameraScreen.backgroundColor = UIColor.gray
@@ -104,7 +90,7 @@ class ViewController: UIViewController {
         cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
         cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
         cameraScreen.bottomAnchor.constraint(equalTo : parchment.topAnchor).isActive = true
-        
+        */
         
         
         
