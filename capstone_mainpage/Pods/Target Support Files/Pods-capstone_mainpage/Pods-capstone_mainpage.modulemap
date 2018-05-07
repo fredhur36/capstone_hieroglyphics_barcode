@@ -1,0 +1,6 @@
+module Pods_capstone_mainpage [system] {
+  umbrella header "Pods-capstone_mainpage-umbrella.h"
+
+  export *
+  module * { export * }
+}
