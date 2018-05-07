@@ -1,6 +1,0 @@
-framework module Pods_CBarcode {
-  umbrella header "Pods-CBarcode-umbrella.h"
-
-  export *
-  module * { export * }
-}

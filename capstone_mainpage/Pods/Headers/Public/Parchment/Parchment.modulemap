@@ -1,6 +1,0 @@
-module Parchment [system] {
-  umbrella header "Parchment-umbrella.h"
-
-  export *
-  module * { export * }
-}
