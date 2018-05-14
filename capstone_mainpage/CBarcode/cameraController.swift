@@ -15,7 +15,6 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
     var originalImage : UIImage!
     var imageData : NSData!
     
-    var flag = 0
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker = UIImagePickerController()
    override func viewDidLoad() {
@@ -27,15 +26,14 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
 
     @IBAction func create(_ sender: Any) {
         
-            uploadImagetoFirebase(data: imageData as NSData, type: 1)
-            
+        uploadImagetoFirebase_Create(data: imageData as NSData)
         
         
     }
     
     @IBAction func scan(_ sender: Any) {
         
-            uploadImagetoFirebase(data: imageData as NSData, type: 2)
+            uploadImagetoFirebase_Scan(data: imageData as NSData)
             
         
     }
@@ -52,9 +50,9 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
     
     func photoPerform(_ sender: Any) {
         // if photo library is available, load it
-       if UIImagePickerController.isSourceTypeAvailable(.camera) {
+       if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             imagePicker.delegate = self
-            imagePicker.sourceType = .camera
+            imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
             
@@ -74,67 +72,68 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
  
  }
         
-    }
+    
     // upload the image to firebase
-    func uploadImagetoFirebase(data: NSData, type : Int)
+    func uploadImagetoFirebase_Scan(data: NSData)
     {
         let uid = Auth.auth().currentUser!.uid
-        
         let imageName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(withPath: "\(uid)/" + "\(imageName).png" )
-        print(imageName)
         let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
-        
-          // this needs to be edited later. It should make a path according to the user's id
+        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        var downloadURL : String = " "
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/png"
-        _ = storageRef.putData(data as Data,metadata: uploadMetadata) {(metadata,error) in
-            if(error != nil) {
-                print("I received an error! \(String(describing: error?.localizedDescription))")
-            }else
-            {
-                print("Upload complete! Here's some metadata ! \(String(describing: metadata))")
-            }
+        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
+            // When the image has successfully uploaded, we get it's download URL
+            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
+            // Write the download URL to the Realtime Database
             
             
-        }
-        if type == 1
-        {
-            
-            
-            let userReference = ref.child("Sticker").child(uid)
-          
-            if let imageURL = uploadMetadata.downloadURL()?.absoluteString {
-                
-                let values = [ "URL" : imageURL, "message" : "temporary message"]
-                
-            
-            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
-                if err != nil {
-                    print(err)
-                    return
-                }
-            }
-            )
-        }
-        }
-        else{
-
-            
+            let values = ["from" : "\(uid)", "photoURL" : "\(downloadURL)"] as [String : Any]
             let userReference = ref.child("Request").child(uid)
-         
-                if (uploadMetadata.downloadURL()?.absoluteString) != nil {
-                    
-                    
-            let values = ["from" : uid, "photoURL" : uploadMetadata.downloadURL()!] as [String : Any]
+            
             userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
                 if err != nil {
-                    print(err)
                     return
                 }
-            }
-            )
+                print()
+                
+            })
+        }
+        
+            
+        
+    }
+
+    func uploadImagetoFirebase_Create(data: NSData)
+    {
+        
+        let uid = Auth.auth().currentUser!.uid
+        let imageName = NSUUID().uuidString
+        let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
+        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        var downloadURL : String = " "
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/png"
+        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
+            // When the image has successfully uploaded, we get it's download URL
+            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
+            // Write the download URL to the Realtime Database
+            
+            
+            let values = ["photoURL" : "\(downloadURL)", "info" : "temporary info" ] as [String : Any]
+            let userReference = ref.child("Stickers").child(uid)
+            
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    return
+                }
+                print()
+                
+            })
         }
     }
-        
 }
+
+
+
