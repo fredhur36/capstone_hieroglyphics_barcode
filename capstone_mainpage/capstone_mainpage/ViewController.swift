@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.yellow
         
         // View for cameraShot button and storage button
         let bottomView = UIView()
@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         
         view.addSubview(bottomView)
         bottomView.bottomAnchor.constraint(equalTo : view.bottomAnchor).isActive = true
-        bottomView.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+        bottomView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+        bottomView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
         bottomView.heightAnchor.constraint(equalToConstant : 130).isActive = true
         
         // Camera Shot Button and Storage Button
@@ -71,14 +72,24 @@ class ViewController: UIViewController {
         addChildViewController(pagingViewController)
         pagingViewController.didMove(toParentViewController: self)
  
-
-        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        pagingViewController.view.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor).isActive = true
         
         //move parchment to the bottom
         pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
-        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor).isActive = true
+        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
         
+        //pagingViewController.pageViewcontroller.auto
+        
+        
+        /*
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        pagingViewController.view.bottomAnchor.constraint(equalTo : view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo: bottomView.topAnchor).isActive = true
+        pagingViewController.view.leadingAnchor.constraint(equalTo : view.leadingAnchor).isActive = true
+        pagingViewController.view.trailingAnchor.constraint(equalTo : view.trailingAnchor).isActive = true
+        pagingViewController.view.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
+*/
         /*
         // Put camera here
         let cameraScreen = UIView()
@@ -98,7 +109,6 @@ class ViewController: UIViewController {
         cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
         cameraScreen.bottomAnchor.constraint(equalTo : parchment.topAnchor).isActive = true
         */
-        
     }
     
     

@@ -81,8 +81,8 @@
 		555C41E4205E42C10021FFD4 /* CBarcode */ = {
 			isa = PBXGroup;
 			children = (
-				553BC95820A028C1002D89D0 /* SWRevealViewController.h */,
 				553BC95920A028C1002D89D0 /* SWRevealViewController.m */,
+				553BC95820A028C1002D89D0 /* SWRevealViewController.h */,
 				5502F010205E91CC001B4334 /* CBarcode-Bridging-Header.h */,
 				555C41E5205E42C10021FFD4 /* AppDelegate.swift */,
 				555C41E7205E42C10021FFD4 /* LoginAndRegisterButtonController.swift */,
@@ -119,7 +119,6 @@
 				555C41DF205E42C10021FFD4 /* Frameworks */,
 				555C41E0205E42C10021FFD4 /* Resources */,
 				68FC34389596F4C5E5A58DF0 /* [CP] Embed Pods Frameworks */,
-				ED78B7F38526FFF4201A5D05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,21 +211,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED78B7F38526FFF4201A5D05 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBarcode/Pods-CBarcode-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBEDE9225E0CAA4AEC0753C5 /* [CP] Check Pods Manifest.lock */ = {
