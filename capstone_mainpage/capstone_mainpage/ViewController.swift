@@ -18,12 +18,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.yellow
         
         // View for cameraShot button and storage button
         let bottomView = UIView()
-        bottomView.backgroundColor = UIColor.red
+        bottomView.backgroundColor = UIColor.yellow
         
         view.addSubview(bottomView)
         bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,8 +32,9 @@ class ViewController: UIViewController {
         
         
         // Camera Shot Button and Storage Button
+        //Need to change the camera button image
         let cameraShotButton = UIButton(type : .custom)
-        cameraShotButton.backgroundColor = UIColor.green
+        cameraShotButton.backgroundColor = UIColor.black
         cameraShotButton.clipsToBounds = true
         
         bottomView.addSubview(cameraShotButton)
