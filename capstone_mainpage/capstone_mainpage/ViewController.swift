@@ -11,7 +11,7 @@ import Parchment
 
 // Create two  view controllers, one is for 'registration of sticker' and the other for 'recognizing sticker',
 // and pass them into our paging view controller.
-// FixedPagingViewController is a subclass of PagingViewController for fixed number of views.
+// FixedPagingViewController is a subclƒass of PagingViewController for fixed number of views.
 // It creates a data source that manages setting up paging items and displaying view controller titles.
 
 class ViewController: UIViewController {
