@@ -71,12 +71,32 @@ class ViewController: UIViewController {
         // Add created view controllers
         addChildViewController(pagingViewController)
         pagingViewController.didMove(toParentViewController: self)
- 
+        
+        /*
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.view.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        
+        pagingViewController.view.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+        pagingViewController.view.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
+        */
+        
         
         //move parchment to the bottom
         pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
         pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
         
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        
+        pagingViewController.pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.backgroundColor = .green
+        
+        pagingViewController.pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.pageViewController.view.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
+        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo : pagingViewController.collectionView.topAnchor).isActive = true
+        pagingViewController.pageViewController.view.leadingAnchor.constraint(equalTo : view.leadingAnchor).isActive = true
+        pagingViewController.pageViewController.view.trailingAnchor.constraint(equalTo : view.trailingAnchor).isActive = true
         //pagingViewController.pageViewcontroller.auto
         
         
