@@ -26,36 +26,37 @@ class ViewController: UIViewController {
         bottomView.backgroundColor = UIColor.red
         
         view.addSubview(bottomView)
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.bottomAnchor.constraint(equalTo : view.bottomAnchor).isActive = true
         bottomView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
         bottomView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
         bottomView.heightAnchor.constraint(equalToConstant : 130).isActive = true
         
+        
         // Camera Shot Button and Storage Button
         let cameraShotButton = UIButton(type : .custom)
         cameraShotButton.backgroundColor = UIColor.green
         cameraShotButton.clipsToBounds = true
-        bottomView.addSubview(cameraShotButton)
         
+        bottomView.addSubview(cameraShotButton)
+        cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
         cameraShotButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
         cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
         cameraShotButton.sizeToFit()
         
+        /*
         let storageButton = UIButton(type : .custom)
         storageButton.setTitle("Storage", for : .normal)
         storageButton.setTitleColor(UIColor.black, for: .normal)
         storageButton.backgroundColor = UIColor.white
         storageButton.clipsToBounds = false
-        bottomView.addSubview(storageButton)
         
+        bottomView.addSubview(storageButton)
+        storageButton.translatesAutoresizingMaskIntoConstraints = false
         storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : -20).isActive = true
         storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
         storageButton.sizeToFit()
-        
-        
-        cameraShotButton.translatesAutoresizingMaskIntoConstraints = false
-        storageButton.translatesAutoresizingMaskIntoConstraints = false
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        */
         
         
         // parchment
@@ -65,9 +66,9 @@ class ViewController: UIViewController {
         let pagingViewController = FixedPagingViewController(viewControllers: [recognizeViewController, registerViewController])
         let parchment = pagingViewController.view!
         
-        
         view.addSubview(parchment)
         view.constrainToEdges(parchment)
+        
         // Add created view controllers
         addChildViewController(pagingViewController)
         pagingViewController.didMove(toParentViewController: self)
@@ -75,10 +76,8 @@ class ViewController: UIViewController {
         //move parchment to the bottom
         pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
         pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
-        
-        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        
+
+        //change the constraint of EMPageViewController class viewController's view
         pagingViewController.pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
         pagingViewController.pageViewController.view.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
