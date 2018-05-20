@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		106067984EEAE6F46F7715CA /* Pods_capstone_mainpage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43B3012A49607D0D1CAD978 /* Pods_capstone_mainpage.framework */; };
-		55CE909820A02EDF008A64F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909420A02EDE008A64F1 /* ViewController.swift */; };
+		55CE909820A02EDF008A64F1 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909420A02EDE008A64F1 /* MainPageViewController.swift */; };
 		55CE909920A02EDF008A64F1 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909520A02EDE008A64F1 /* UIView+constraints.swift */; };
 		55CE909A20A02EDF008A64F1 /* RecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */; };
 		55CE909B20A02EDF008A64F1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE909720A02EDE008A64F1 /* RegisterViewController.swift */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		362A7C0F572752759910B343 /* libPods-capstone_mainpageUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capstone_mainpageUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55CE909420A02EDE008A64F1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55CE909420A02EDE008A64F1 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		55CE909520A02EDE008A64F1 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeViewController.swift; sourceTree = "<group>"; };
 		55CE909720A02EDE008A64F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		9334DAC72079AF9500B57579 /* capstone_mainpage */ = {
 			isa = PBXGroup;
 			children = (
-				55CE909420A02EDE008A64F1 /* ViewController.swift */,
+				55CE909420A02EDE008A64F1 /* MainPageViewController.swift */,
 				55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */,
 				55CE909720A02EDE008A64F1 /* RegisterViewController.swift */,
 				55CE909520A02EDE008A64F1 /* UIView+constraints.swift */,
@@ -337,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55CE909820A02EDF008A64F1 /* ViewController.swift in Sources */,
+				55CE909820A02EDF008A64F1 /* MainPageViewController.swift in Sources */,
 				55CE909B20A02EDF008A64F1 /* RegisterViewController.swift in Sources */,
 				55CE909A20A02EDF008A64F1 /* RecognizeViewController.swift in Sources */,
 				55CE909920A02EDF008A64F1 /* UIView+constraints.swift in Sources */,

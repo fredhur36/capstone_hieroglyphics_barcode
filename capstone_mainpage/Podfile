@@ -29,7 +29,7 @@ target 'CBarcode' do
   pod 'SCLAlertView'
   pod 'TextFieldEffects'
   pod 'PMSuperButton'
-
+  pod 'Parchment'
 end
 
 

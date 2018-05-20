@@ -14,7 +14,7 @@ import Parchment
 // FixedPagingViewController is a subclƒass of PagingViewController for fixed number of views.
 // It creates a data source that manages setting up paging items and displaying view controller titles.
 
-class ViewController: UIViewController {
+class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
