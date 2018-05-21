@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecognizeViewController: UIViewController {
+class ScanModeViewController: UIViewController {
     
     init(index: Int) {
         super.init(nibName: nil, bundle: nil)

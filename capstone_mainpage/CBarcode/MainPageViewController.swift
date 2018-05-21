@@ -60,11 +60,11 @@ class MainPageViewController: UIViewController {
         
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
-        let recognizeViewController = RecognizeViewController(index: 0)
+        let scanModeViewController = ScanModeViewController(index: 0)
         let registerModeViewController = RegisterModeViewController(index : 1)
-        let pagingViewController = FixedPagingViewController(viewControllers: [recognizeViewController, registerModeViewController])
+        let pagingViewController = FixedPagingViewController(viewControllers: [scanModeViewController, registerModeViewController])
         let parchment = pagingViewController.view!
-        
+        print(pagingViewController.state.currentPagingItem)
         view.addSubview(parchment)
         view.constrainToEdges(parchment)
         
