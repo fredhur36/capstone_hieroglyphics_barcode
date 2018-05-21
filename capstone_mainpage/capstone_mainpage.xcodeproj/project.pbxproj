@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		362A7C0F572752759910B343 /* libPods-capstone_mainpageUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capstone_mainpageUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55CE909420A02EDE008A64F1 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		55CE909420A02EDE008A64F1 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPageViewController.swift; path = ../CBarcode/MainPageViewController.swift; sourceTree = "<group>"; };
 		55CE909520A02EDE008A64F1 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		55CE909620A02EDE008A64F1 /* RecognizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeViewController.swift; sourceTree = "<group>"; };
 		55CE909720A02EDE008A64F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };

@@ -61,8 +61,8 @@ class MainPageViewController: UIViewController {
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
         let recognizeViewController = RecognizeViewController(index: 0)
-        let registerViewController = RegisterViewController(index : 1)
-        let pagingViewController = FixedPagingViewController(viewControllers: [recognizeViewController, registerViewController])
+        let registerModeViewController = RegisterModeViewController(index : 1)
+        let pagingViewController = FixedPagingViewController(viewControllers: [recognizeViewController, registerModeViewController])
         let parchment = pagingViewController.view!
         
         view.addSubview(parchment)

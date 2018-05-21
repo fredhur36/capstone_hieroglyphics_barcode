@@ -17,6 +17,10 @@
 		555C41F8205E42E80021FFD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 555C41F7205E42E80021FFD4 /* GoogleService-Info.plist */; };
 		555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41F9205E53E50021FFD4 /* RegisterViewController.swift */; };
 		555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41FB205E540F0021FFD4 /* LoginViewController.swift */; };
+		9326103820B24BF700E8ED0B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103720B24BF700E8ED0B /* MainPageViewController.swift */; };
+		9326103A20B24C3900E8ED0B /* RecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103920B24C3900E8ED0B /* RecognizeViewController.swift */; };
+		9326103C20B24C3C00E8ED0B /* RegisterModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103B20B24C3C00E8ED0B /* RegisterModeViewController.swift */; };
+		9326103E20B24C9E00E8ED0B /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */; };
 		93ADB1EC20B064910073D197 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ADB1EB20B064910073D197 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,10 @@
 		555C41F7205E42E80021FFD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		555C41F9205E53E50021FFD4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		555C41FB205E540F0021FFD4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9326103720B24BF700E8ED0B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		9326103920B24C3900E8ED0B /* RecognizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecognizeViewController.swift; path = ../capstone_mainpage/RecognizeViewController.swift; sourceTree = "<group>"; };
+		9326103B20B24C3C00E8ED0B /* RegisterModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterModeViewController.swift; sourceTree = SOURCE_ROOT; };
+		9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+constraints.swift"; path = "../capstone_mainpage/UIView+constraints.swift"; sourceTree = "<group>"; };
 		93ADB1EA20B064800073D197 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		93ADB1EB20B064910073D197 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +95,11 @@
 				555C41E5205E42C10021FFD4 /* AppDelegate.swift */,
 				555C41E7205E42C10021FFD4 /* LoginAndRegisterButtonController.swift */,
 				555C41FB205E540F0021FFD4 /* LoginViewController.swift */,
+				9326103920B24C3900E8ED0B /* RecognizeViewController.swift */,
+				9326103720B24BF700E8ED0B /* MainPageViewController.swift */,
 				555C41F9205E53E50021FFD4 /* RegisterViewController.swift */,
+				9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */,
+				9326103B20B24C3C00E8ED0B /* RegisterModeViewController.swift */,
 				5553AC8C2060BE5200655CF2 /* cameraController.swift */,
 				555C41E9205E42C10021FFD4 /* Main.storyboard */,
 				555C41EC205E42C10021FFD4 /* Assets.xcassets */,
@@ -240,10 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9326103C20B24C3C00E8ED0B /* RegisterModeViewController.swift in Sources */,
+				9326103E20B24C9E00E8ED0B /* UIView+constraints.swift in Sources */,
 				93ADB1EC20B064910073D197 /* SWRevealViewController.m in Sources */,
+				9326103820B24BF700E8ED0B /* MainPageViewController.swift in Sources */,
 				555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */,
 				555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */,
 				555C41E8205E42C10021FFD4 /* LoginAndRegisterButtonController.swift in Sources */,
+				9326103A20B24C3900E8ED0B /* RecognizeViewController.swift in Sources */,
 				555C41E6205E42C10021FFD4 /* AppDelegate.swift in Sources */,
 				5553AC8D2060BE5200655CF2 /* cameraController.swift in Sources */,
 			);

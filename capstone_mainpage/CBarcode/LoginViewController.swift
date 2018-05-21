@@ -10,7 +10,6 @@ import Firebase
 import SCLAlertView
 import TextFieldEffects
 import Parchment
-import capstone_mainpage
 
 class LoginViewController: UIViewController {
     
@@ -37,8 +36,9 @@ class LoginViewController: UIViewController {
             {
                 // login successful. move to the main menu
                 //self.performSegue(withIdentifier: "toMenu", sender: self)
+                print("try to open a new page")
                 let mainPageViewController = MainPageViewController()
-                self.navigationController.pushViewController(mainPageViewController, animated: true)
+                self.present(mainPageViewController, animated: true, completion: nil)
             }
         })
     }
