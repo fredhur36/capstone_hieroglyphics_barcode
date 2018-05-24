@@ -64,7 +64,6 @@ class MainPageViewController: UIViewController {
         let registerModeViewController = RegisterModeViewController(index : 1)
         let pagingViewController = FixedPagingViewController(viewControllers: [scanModeViewController, registerModeViewController])
         let parchment = pagingViewController.view!
-        print(pagingViewController.state.currentPagingItem)
         view.addSubview(parchment)
         view.constrainToEdges(parchment)
         
@@ -73,18 +72,11 @@ class MainPageViewController: UIViewController {
         pagingViewController.didMove(toParentViewController: self)
         
         //move parchment to the bottom
-        pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
-        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
-
-        //change the constraint of EMPageViewController class viewController's view
-        pagingViewController.pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        pagingViewController.pageViewController.view.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
-        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo : pagingViewController.collectionView.topAnchor).isActive = true
-        pagingViewController.pageViewController.view.leadingAnchor.constraint(equalTo : view.leadingAnchor).isActive = true
-        pagingViewController.pageViewController.view.trailingAnchor.constraint(equalTo : view.trailingAnchor).isActive = true
-        
-        
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor, constant: -130).isActive = true
         
         /*
         // Put camera here
