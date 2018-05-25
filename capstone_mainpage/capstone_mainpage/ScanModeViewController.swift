@@ -14,9 +14,8 @@ class ScanModeViewController: UIViewController {
     var captureSession = AVCaptureSession()
     var camera : AVCaptureDevice?
     var currentCamera : AVCaptureDevice?
-    var photoOutput: AVCapturePhotoOutput?
+    public var photoOutput: AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    
     
     //var stillImageOutput: AVCaptureStillImageOutput?
     //var cameraScreenLayer: AVCaptureVideoPreviewLayer?
@@ -24,18 +23,13 @@ class ScanModeViewController: UIViewController {
     
     init(index: Int) {
         super.init(nibName: nil, bundle: nil)
+        title = "Scan"
         
-        title = "ScanMode"
-        
-        //view.backgroundColor = .white
         /*
-         
-         
          
          let label = UILabel()
          label.text = "ScanMode"
          label.sizeToFit()
-         
          
          */
     }
@@ -86,6 +80,10 @@ class ScanModeViewController: UIViewController {
     
     func startRunningCaptureSession(){
         captureSession.startRunning()
+    }
+    
+    func getPhotoPutput() -> AVCapturePhotoOutput?{
+        return photoOutput
     }
     
     
