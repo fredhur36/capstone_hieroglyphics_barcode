@@ -18,13 +18,10 @@ class CameraViewController: UIViewController {
     public var photoOutput: AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    //var stillImageOutput: AVCaptureStillImageOutput?
-    //var cameraScreenLayer: AVCaptureVideoPreviewLayer?
     
-    
-    init(index: Int) {
+    init(index: Int, name : String) {
         super.init(nibName: nil, bundle: nil)
-        title = "Scan"
+        title = name
         
         /*
          

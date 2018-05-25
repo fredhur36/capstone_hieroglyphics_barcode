@@ -17,8 +17,8 @@ import AVFoundation
 
 class MainPageViewController: UIViewController {
     
-    let scanModeViewController :UIViewController
-    let registerModeViewController : UIViewController
+   // let scanModeViewController :UIViewController?
+    //let registerModeViewController : UIViewController?
     let pagingViewController : FixedPagingViewController
     var currentIndex : Int?
     var currentViewController : UIViewController?
@@ -26,9 +26,11 @@ class MainPageViewController: UIViewController {
     var image : UIImage?
     
     init(){
-        scanModeViewController = ScanModeViewController(index: 0)
-        registerModeViewController = RegisterModeViewController(index : 1)
-        pagingViewController = FixedPagingViewController(viewControllers: [scanModeViewController, registerModeViewController])
+        pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "reigster")])
+        
+        //scanModeViewController = ScanModeViewController(index: 0)
+        //registerModeViewController = RegisterModeViewController(index : 1)
+        //pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -107,15 +109,10 @@ class MainPageViewController: UIViewController {
     @objc func buttonAction(_ sender : UIButton!){
         print("Button tapped")
         currentIndex = pagingViewController.state.currentPagingItem!.index
-        //photoOutput = pagingViewController.viewControllers[currentIndex!].photoOutput
-        if currentIndex == 0 {
-            let p = pagingViewController.viewControllers[currentIndex!] as! ScanModeViewController
+        
+        if let p = pagingViewController.viewControllers[currentIndex!] as? CameraViewController {
             photoOutput = p.photoOutput
         }
-        else {
-            let p = pagingViewController.viewControllers[currentIndex!] as! RegisterModeViewController
-            photoOutput = p.photoOutput
-            }
         /*
         else {
             // Need to change into register later
