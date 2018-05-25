@@ -84,8 +84,6 @@ class CameraViewController: UIViewController {
         return photoOutput
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
 }

@@ -17,8 +17,8 @@ import AVFoundation
 
 class MainPageViewController: UIViewController {
     
-   // let scanModeViewController :UIViewController?
-    //let registerModeViewController : UIViewController?
+    var scanModeViewController :UIViewController!
+    var registerModeViewController : UIViewController!
     let pagingViewController : FixedPagingViewController
     var currentIndex : Int?
     var currentViewController : UIViewController?
@@ -132,6 +132,17 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
         if let imageData = photo.fileDataRepresentation(){
             image = UIImage(data : imageData)
             print(image)
+            if(currentIndex == 0 ){
+                scanModeViewController = ScanModeViewController(image : image!)
+                self.present(scanModeViewController, animated: true, completion: nil)
+                print("ScanMode")
+            }
+            else if(currentIndex  == 1){
+                scanModeViewController = ScanModeViewController(image : image!)
+                self.present(scanModeViewController, animated: true, completion: nil)
+                //registerModeViewController = registerModeViewController(image: Image)
+                print("RegisterMode")
+            }
             //show the image
         }
     }
