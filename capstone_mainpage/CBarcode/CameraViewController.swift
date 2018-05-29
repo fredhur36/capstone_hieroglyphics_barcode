@@ -9,40 +9,33 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: UIViewController {
+class CameraViewController : UIViewController {
     
     
     var captureSession = AVCaptureSession()
     var camera : AVCaptureDevice?
     var currentCamera : AVCaptureDevice?
-    public var photoOutput: AVCapturePhotoOutput?
-    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var photoOutput: AVCapturePhotoOutput?
+       
     
-    
-    init(index: Int, name : String) {
+    init() {
         super.init(nibName: nil, bundle: nil)
-        title = name
-        
-        /*
-         
-         let label = UILabel()
-         label.text = "ScanMode"
-         label.sizeToFit()
-         
-         */
-    }
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
         setupCaptureSession()
         setupDevice()
         setupInputOutput()
-        setupPreviewLayer()
         startRunningCaptureSession()
-        
+        /*
+         let label = UILabel()
+         label.text = "ScanMode"
+         label.sizeToFit()
+         */
     }
+    
+    /*
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+ */
     
     func setupCaptureSession(){
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
@@ -66,39 +59,31 @@ class CameraViewController: UIViewController {
             print(error)
         }
     }
-    
-    func setupPreviewLayer(){
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session : captureSession)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = self.view.frame
-        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
-        
-    }
+
     
     func startRunningCaptureSession(){
         captureSession.startRunning()
     }
     
-    func getPhotoPutput() -> AVCapturePhotoOutput?{
-        return photoOutput
+    func getCaptureSession() -> AVCaptureSession {
+        return captureSession
     }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-}
+        
+    }
 
 
-/*
- override func viewWillAppear(animated: Bool) {
- super.viewWillAppear(animated)
- // Setup your camera here...
- }
+
  
- overrid func viewDidAppear(animated : Bool){
- super.viewDidAppear(animated)
- cameraScreenLayer!.frame =
- }
+ /*
+    override func viewDidDisappear(_ animated : Bool){
+        super.viewDidDisappear(animated)
+        //cameraScreenLayer!.frame =
+    }
  */
 
 }
