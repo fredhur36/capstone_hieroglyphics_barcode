@@ -8,6 +8,7 @@
 
 import UIKit
 import Parchment
+import AVFoundation
 
 // Create two  view controllers, one is for 'registration of sticker' and the other for 'recognizing sticker',
 // and pass them into our paging view controller.
@@ -15,6 +16,28 @@ import Parchment
 // It creates a data source that manages setting up paging items and displaying view controller titles.
 
 class MainPageViewController: UIViewController {
+    
+    var scanModeViewController :UIViewController!
+    var registerModeViewController : UIViewController!
+    let pagingViewController : FixedPagingViewController
+    var currentIndex : Int?
+    var currentViewController : UIViewController?
+    var photoOutput : AVCapturePhotoOutput?
+    var image : UIImage?
+    
+    init(){
+        pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "reigster")])
+        
+        //scanModeViewController = ScanModeViewController(index: 0)
+        //registerModeViewController = RegisterModeViewController(index : 1)
+        //pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +83,9 @@ class MainPageViewController: UIViewController {
         
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
-        let scanModeViewController = ScanModeViewController(index: 0)
-        let registerModeViewController = RegisterModeViewController(index : 1)
-        let pagingViewController = FixedPagingViewController(viewControllers: [scanModeViewController, registerModeViewController])
+        
+        
         let parchment = pagingViewController.view!
-        print(pagingViewController.state.currentPagingItem)
         view.addSubview(parchment)
         view.constrainToEdges(parchment)
         
@@ -73,38 +94,57 @@ class MainPageViewController: UIViewController {
         pagingViewController.didMove(toParentViewController: self)
         
         //move parchment to the bottom
-        pagingViewController.collectionView.topAnchor.constraint(equalTo:pagingViewController.view.topAnchor).isActive = false
-        pagingViewController.collectionView.bottomAnchor.constraint(equalTo:bottomView.topAnchor).isActive = true
-
-        //change the constraint of EMPageViewController class viewController's view
-        pagingViewController.pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        pagingViewController.pageViewController.view.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
-        pagingViewController.pageViewController.view.bottomAnchor.constraint(equalTo : pagingViewController.collectionView.topAnchor).isActive = true
-        pagingViewController.pageViewController.view.leadingAnchor.constraint(equalTo : view.leadingAnchor).isActive = true
-        pagingViewController.pageViewController.view.trailingAnchor.constraint(equalTo : view.trailingAnchor).isActive = true
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
+        pagingViewController.view.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor, constant: -130).isActive = true
         
+        //pagingViewController.state.currentPagingItem
         
+        cameraShotButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
+        }
+    
+    @objc func buttonAction(_ sender : UIButton!){
+        print("Button tapped")
+        currentIndex = pagingViewController.state.currentPagingItem!.index
+        
+        if let p = pagingViewController.viewControllers[currentIndex!] as? CameraViewController {
+            photoOutput = p.photoOutput
+        }
         /*
-        // Put camera here
-        let cameraScreen = UIView()
-        cameraScreen.backgroundColor = UIColor.gray
-        
-        let label = UILabel(frame :.zero)
-        label.text = "cameraScreen"
-        label.textColor = UIColor.white
-        label.sizeToFit()
-        
-        cameraScreen.addSubview(label)
-        cameraScreen.constrainCentered(label)
-        cameraScreen.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(cameraScreen)
-        cameraScreen.topAnchor.constraint(equalTo : view.topAnchor).isActive = true
-        cameraScreen.widthAnchor.constraint(equalTo : view.widthAnchor).isActive = true
-        cameraScreen.bottomAnchor.constraint(equalTo : parchment.topAnchor).isActive = true
-        */
+        else {
+            // Need to change into register later
+            currentViewController = pagingViewController.viewControllers[currentIndex!] as! ScanModeViewController
+            //photoOutput = currentViewController.photoOuput
+        }*/
+
+        //photoOutput = pagingViewController.viewControllers[currentIndex!].photoOutput
+        let setting = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: setting, delegate: self)
+ }
+
+}
+
+extension MainPageViewController : AVCapturePhotoCaptureDelegate{
+    func photoOutput(_ ouput: AVCapturePhotoOutput, didFinishProcessingPhoto photo : AVCapturePhoto, error: Error?){
+        if let imageData = photo.fileDataRepresentation(){
+            image = UIImage(data : imageData)
+            print(image)
+            if(currentIndex == 0 ){
+                scanModeViewController = ScanModeViewController(image : image!)
+                self.present(scanModeViewController, animated: true, completion: nil)
+                print("ScanMode")
+            }
+            else if(currentIndex  == 1){
+                scanModeViewController = ScanModeViewController(image : image!)
+                self.present(scanModeViewController, animated: true, completion: nil)
+                //registerModeViewController = registerModeViewController(image: Image)
+                print("RegisterMode")
+            }
+            //show the image
+        }
     }
     
 }

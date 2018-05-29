@@ -40,8 +40,8 @@ class RegisterViewController: UIViewController {
                     
                 })
                 // register successful, move to the main menu
-                self.performSegue(withIdentifier: "toMenu", sender: self)
-                
+                let mainPageViewController = MainPageViewController()
+                self.present(mainPageViewController, animated: true, completion: nil)
                 
             }
         })
