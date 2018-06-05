@@ -28,7 +28,7 @@ class MainPageViewController: UIViewController {
     var imageToSend: NSData!
     
     init(){
-        pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "reigster")])
+        pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "register")])
         
         //scanModeViewController = ScanModeViewController(index: 0)
         //registerModeViewController = RegisterModeViewController(index : 1)
