@@ -26,9 +26,10 @@ class MainPageViewController: UIViewController {
     var photoOutput : AVCapturePhotoOutput?
     var image : UIImage?
     var imageToSend: NSData!
-    
+    var nextView : cameraController!
     init(){
         pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "register")])
+        nextView = cameraController()
         
         //scanModeViewController = ScanModeViewController(index: 0)
         //registerModeViewController = RegisterModeViewController(index : 1)
@@ -146,19 +147,23 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             }
             else if(currentIndex  == 1){
                 scanModeViewController = ScanModeViewController(image : image!)
-                self.present(scanModeViewController, animated: true, completion: nil)
+               // self.present(scanModeViewController, animated: true, completion: nil)
                 //registerModeViewController = registerModeViewController(image: Image)
                 
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
                 
                 uploadImagetoFirebase_Create(data: imageToSend as NSData)
                 
-                print("RegisterMode")
+                let storyboard = UIStoryboard(name:"Main", bundle: nil)
+                let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+                
+                //self.navigationController?.pushViewController(secondVC, animated: true)
+               self.present(secondVC, animated: true, completion: nil)
+                
             }
             //show the image
         }
     }
-
     // upload the image to firebase
     func uploadImagetoFirebase_Scan(data: NSData)
     {

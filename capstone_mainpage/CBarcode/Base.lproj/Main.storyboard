@@ -435,16 +435,17 @@
                         <outlet property="IDText" destination="hjY-Av-bem" id="jOq-t0-jMP"/>
                         <outlet property="PasswordText" destination="k0d-uK-wc6" id="yXX-rJ-f4B"/>
                         <segue destination="Fp3-t8-UIN" kind="push" identifier="toMenu" id="J8O-pK-WTb"/>
+                        <segue destination="jKt-uC-Z4s" kind="show" identifier="toInfo" id="Ajc-Sm-T0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYd-um-V3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="927"/>
         </scene>
-        <!--Camera Controller-->
+        <!--Info View Controller-->
         <scene sceneID="wFh-h4-xGm">
             <objects>
-                <viewController id="jKt-uC-Z4s" customClass="cameraController" customModule="CBarcode" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoViewController" id="jKt-uC-Z4s" customClass="InfoViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2G-WY-Ccp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wge-9l-sTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="842.42878560719646"/>
+            <point key="canvasLocation" x="983" y="1415"/>
         </scene>
     </scenes>
     <resources>
