@@ -81,6 +81,7 @@ class RegisterModeViewController: UIViewController {
     }
     
     func getPhotoPutput() -> AVCapturePhotoOutput?{
+        
         return photoOutput
     }
     

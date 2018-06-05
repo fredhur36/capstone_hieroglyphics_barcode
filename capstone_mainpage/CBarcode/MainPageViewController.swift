@@ -9,7 +9,8 @@
 import UIKit
 import Parchment
 import AVFoundation
-
+import Firebase
+import FirebaseStorage
 // Create two  view controllers, one is for 'registration of sticker' and the other for 'recognizing sticker',
 // and pass them into our paging view controller.
 // FixedPagingViewController is a subclƒass of PagingViewController for fixed number of views.
@@ -24,6 +25,7 @@ class MainPageViewController: UIViewController {
     var currentViewController : UIViewController?
     var photoOutput : AVCapturePhotoOutput?
     var image : UIImage?
+    var imageToSend: NSData!
     
     init(){
         pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "reigster")])
@@ -134,6 +136,11 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             print(image)
             if(currentIndex == 0 ){
                 scanModeViewController = ScanModeViewController(image : image!)
+                
+                imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
+                
+                uploadImagetoFirebase_Scan(data: imageToSend as NSData)
+                
                 self.present(scanModeViewController, animated: true, completion: nil)
                 print("ScanMode")
             }
@@ -141,10 +148,76 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
                 scanModeViewController = ScanModeViewController(image : image!)
                 self.present(scanModeViewController, animated: true, completion: nil)
                 //registerModeViewController = registerModeViewController(image: Image)
+                
+                imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
+                
+                uploadImagetoFirebase_Create(data: imageToSend as NSData)
+                
                 print("RegisterMode")
             }
             //show the image
         }
     }
+
+    // upload the image to firebase
+    func uploadImagetoFirebase_Scan(data: NSData)
+    {
+        let uid = Auth.auth().currentUser!.uid
+        let imageName = NSUUID().uuidString
+        let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
+        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        var downloadURL : String = " "
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/png"
+        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
+            // When the image has successfully uploaded, we get it's download URL
+            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
+            // Write the download URL to the Realtime Database
+            
+            
+            let values = ["from" : "\(uid)", "photoURL" : "\(downloadURL)"] as [String : Any]
+            let userReference = ref.child("Request").child(uid)
+            
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    return
+                }
+                print()
+                
+            })
+        }
+        
+        
+        
+    }
     
+    func uploadImagetoFirebase_Create(data: NSData)
+    {
+        
+        let uid = Auth.auth().currentUser!.uid
+        let imageName = NSUUID().uuidString
+        let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
+        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        var downloadURL : String = " "
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/png"
+        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
+            // When the image has successfully uploaded, we get it's download URL
+            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
+            // Write the download URL to the Realtime Database
+            
+            
+            let values = ["photoURL" : "\(downloadURL)", "info" : "temporary info" ] as [String : Any]
+            let userReference = ref.child("Stickers").child(uid)
+            
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    return
+                }
+                print()
+                
+            })
+        }
+
+}
 }

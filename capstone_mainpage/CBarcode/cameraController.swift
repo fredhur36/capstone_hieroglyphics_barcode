@@ -52,7 +52,7 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
         // if photo library is available, load it
        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = .camera
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
             
@@ -68,7 +68,7 @@ class cameraController : UIViewController, UIImagePickerControllerDelegate, UINa
         imageData = UIImageJPEGRepresentation(originalImage, 0.8)! as NSData
         
         
-           // uploadImagetoFirebase(data: imageData as NSData, type: 1)
+        //uploadImagetoFirebase_Scan(data: imageData as NSData)
  
  }
         
