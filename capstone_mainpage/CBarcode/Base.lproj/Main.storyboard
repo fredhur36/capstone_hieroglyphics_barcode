@@ -435,17 +435,70 @@
                         <outlet property="IDText" destination="hjY-Av-bem" id="jOq-t0-jMP"/>
                         <outlet property="PasswordText" destination="k0d-uK-wc6" id="yXX-rJ-f4B"/>
                         <segue destination="Fp3-t8-UIN" kind="push" identifier="toMenu" id="J8O-pK-WTb"/>
-                        <segue destination="jKt-uC-Z4s" kind="show" identifier="toInfo" id="Ajc-Sm-T0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYd-um-V3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="927"/>
         </scene>
-        <!--Info View Controller-->
+        <!--InfoViewController-->
+        <scene sceneID="MKZ-eh-LZJ">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" title="InfoViewController" id="W7b-pu-2tz" customClass="InfoViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZU1-aT-xkS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tvY-J0-yfr">
+                                <rect key="frame" x="20" y="60" width="335" height="391"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0t-xr-7W1">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="391"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Yg-UV-ga0">
+                                <rect key="frame" x="40" y="491" width="295" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMy-q1-AGX">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <segue destination="jKt-uC-Z4s" kind="show" identifier="toRegisterInfo" id="vSv-1h-Y3t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-kE-prQ">
+                                        <rect key="frame" x="0.0" y="30" width="295" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tvY-J0-yfr" secondAttribute="trailing" constant="20" id="05R-0V-BS7"/>
+                            <constraint firstItem="tvY-J0-yfr" firstAttribute="leading" secondItem="l7m-B4-IeK" secondAttribute="leading" constant="20" id="08X-Lr-oAX"/>
+                            <constraint firstItem="l7m-B4-IeK" firstAttribute="trailing" secondItem="2Yg-UV-ga0" secondAttribute="trailing" constant="40" id="WCC-YP-P3G"/>
+                            <constraint firstItem="tvY-J0-yfr" firstAttribute="centerX" secondItem="l7m-B4-IeK" secondAttribute="centerX" id="XiY-vp-6n2"/>
+                            <constraint firstItem="2Yg-UV-ga0" firstAttribute="top" secondItem="f0t-xr-7W1" secondAttribute="bottom" constant="40" id="Zut-Cm-aJM"/>
+                            <constraint firstItem="2Yg-UV-ga0" firstAttribute="leading" secondItem="l7m-B4-IeK" secondAttribute="leading" constant="40" id="Zwx-Dg-xMb"/>
+                            <constraint firstItem="tvY-J0-yfr" firstAttribute="top" secondItem="l7m-B4-IeK" secondAttribute="top" constant="40" id="cfM-tW-IVL"/>
+                            <constraint firstAttribute="bottom" secondItem="tvY-J0-yfr" secondAttribute="bottom" constant="216" id="yUT-rs-Emy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l7m-B4-IeK"/>
+                    </view>
+                    <connections>
+                        <outlet property="ImageView" destination="f0t-xr-7W1" id="lHi-L9-mKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGs-U2-ZuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029.5999999999999" y="1551.2743628185908"/>
+        </scene>
+        <!--TitleDescriptionViewController-->
         <scene sceneID="wFh-h4-xGm">
             <objects>
-                <viewController storyboardIdentifier="InfoViewController" id="jKt-uC-Z4s" customClass="InfoViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleDescriptionViewController" title="TitleDescriptionViewController" id="jKt-uC-Z4s" customClass="TitleDescriptionViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2G-WY-Ccp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,13 +560,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbO-OL-Gq9">
-                                <rect key="frame" x="16" y="229" width="343" height="296"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -539,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wge-9l-sTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="1415"/>
+            <point key="canvasLocation" x="1865" y="1507"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  InfoViewController.swift
+//  TitleDescriptionViewController.swift
 //  CBarcode
 //
 //  Created by Se Jin Lee on 06/06/2018.
@@ -7,18 +7,10 @@
 //
 
 import UIKit
-
-import Parchment
-import AVFoundation
-class InfoViewController: UIViewController, AVCapturePhotoCaptureDelegate  {
-    @IBOutlet weak var ImageView: UIImageView!
-    var image = UIImage()
-    var imageData = Data()
-    
-    
+class TitleDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-         ImageView.image = UIImage(data : imageData)
+        
         
     }
     

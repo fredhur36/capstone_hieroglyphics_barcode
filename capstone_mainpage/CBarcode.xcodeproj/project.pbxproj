@@ -18,6 +18,7 @@
 		555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41F9205E53E50021FFD4 /* RegisterViewController.swift */; };
 		555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41FB205E540F0021FFD4 /* LoginViewController.swift */; };
 		55E89BE720C706790055397C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BE620C706790055397C /* InfoViewController.swift */; };
+		55E89BE920C70C700055397C /* TitleDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */; };
 		9326103820B24BF700E8ED0B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103720B24BF700E8ED0B /* MainPageViewController.swift */; };
 		9326103A20B24C3900E8ED0B /* ScanModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103920B24C3900E8ED0B /* ScanModeViewController.swift */; };
 		9326103E20B24C9E00E8ED0B /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */; };
@@ -43,6 +44,7 @@
 		555C41F9205E53E50021FFD4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		555C41FB205E540F0021FFD4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		55E89BE620C706790055397C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionViewController.swift; sourceTree = "<group>"; };
 		9326103720B24BF700E8ED0B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		9326103920B24C3900E8ED0B /* ScanModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanModeViewController.swift; path = ../capstone_mainpage/ScanModeViewController.swift; sourceTree = "<group>"; };
 		9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+constraints.swift"; path = "../capstone_mainpage/UIView+constraints.swift"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */,
 				5553AC8C2060BE5200655CF2 /* cameraController.swift */,
 				55E89BE620C706790055397C /* InfoViewController.swift */,
+				55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */,
 				555C41E9205E42C10021FFD4 /* Main.storyboard */,
 				555C41EC205E42C10021FFD4 /* Assets.xcassets */,
 				555C41EE205E42C10021FFD4 /* LaunchScreen.storyboard */,
@@ -283,6 +286,7 @@
 				555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */,
 				555C41E8205E42C10021FFD4 /* LoginAndRegisterButtonController.swift in Sources */,
 				9326103A20B24C3900E8ED0B /* ScanModeViewController.swift in Sources */,
+				55E89BE920C70C700055397C /* TitleDescriptionViewController.swift in Sources */,
 				555C41E6205E42C10021FFD4 /* AppDelegate.swift in Sources */,
 				55E89BE720C706790055397C /* InfoViewController.swift in Sources */,
 				5553AC8D2060BE5200655CF2 /* cameraController.swift in Sources */,

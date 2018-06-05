@@ -26,7 +26,7 @@ class MainPageViewController: UIViewController {
     var photoOutput : AVCapturePhotoOutput?
     var image : UIImage?
     var imageToSend: NSData!
-    var nextView : cameraController!
+    var nextView : cameraController!  
     init(){
         pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "register")])
         nextView = cameraController()
@@ -157,7 +157,8 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
                 let storyboard = UIStoryboard(name:"Main", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
                 
-                //self.navigationController?.pushViewController(secondVC, animated: true)
+                self.navigationController?.pushViewController(secondVC, animated: true)
+                secondVC.imageData = imageData
                self.present(secondVC, animated: true, completion: nil)
                 
             }
