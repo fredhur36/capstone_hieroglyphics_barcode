@@ -18,8 +18,6 @@ import FirebaseStorage
 
 class MainPageViewController: UIViewController {
     
-    var scanModeViewController :UIViewController!
-    var registerModeViewController : UIViewController!
     let pagingViewController : FixedPagingViewController
     var currentIndex : Int?
     var currentViewController : UIViewController?
@@ -30,10 +28,7 @@ class MainPageViewController: UIViewController {
     init(){
         pagingViewController = FixedPagingViewController(viewControllers: [CameraViewController(index: 0, name : "scan"), CameraViewController(index: 1, name : "register")])
         nextView = cameraController()
-        
-        //scanModeViewController = ScanModeViewController(index: 0)
-        //registerModeViewController = RegisterModeViewController(index : 1)
-        //pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,24 +64,9 @@ class MainPageViewController: UIViewController {
         cameraShotButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
         cameraShotButton.sizeToFit()
         
-        /*
-        let storageButton = UIButton(type : .custom)
-        storageButton.setTitle("Storage", for : .normal)
-        storageButton.setTitleColor(UIColor.black, for: .normal)
-        storageButton.backgroundColor = UIColor.white
-        storageButton.clipsToBounds = false
-        
-        bottomView.addSubview(storageButton)
-        storageButton.translatesAutoresizingMaskIntoConstraints = false
-        storageButton.rightAnchor.constraint(equalTo : bottomView.rightAnchor, constant : -20).isActive = true
-        storageButton.centerYAnchor.constraint(equalTo : bottomView.centerYAnchor).isActive = true
-        storageButton.sizeToFit()
-        */
-        
         
         // parchment
         // Create two view controllers and pass them to pagingViewcontroller.
-        
         
         let parchment = pagingViewController.view!
         view.addSubview(parchment)
@@ -98,8 +78,6 @@ class MainPageViewController: UIViewController {
         
         //move parchment to the bottom
         pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
-        pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
         pagingViewController.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = false
         pagingViewController.view.bottomAnchor.constraint(equalTo:bottomView.bottomAnchor, constant: -130).isActive = true
         
@@ -136,22 +114,14 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             image = UIImage(data : imageData)
             print(image)
             if(currentIndex == 0 ){
-                scanModeViewController = ScanModeViewController(image : image!)
                 
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
-                
                 uploadImagetoFirebase_Scan(data: imageToSend as NSData)
                 
-                self.present(scanModeViewController, animated: true, completion: nil)
                 print("ScanMode")
             }
             else if(currentIndex  == 1){
-                scanModeViewController = ScanModeViewController(image : image!)
-               // self.present(scanModeViewController, animated: true, completion: nil)
-                //registerModeViewController = registerModeViewController(image: Image)
-                
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
-                
                 uploadImagetoFirebase_Create(data: imageToSend as NSData)
                 
                 let storyboard = UIStoryboard(name:"Main", bundle: nil)

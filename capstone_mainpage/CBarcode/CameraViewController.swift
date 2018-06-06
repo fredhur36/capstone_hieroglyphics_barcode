@@ -24,14 +24,6 @@ class CameraViewController: UIViewController {
     init(index: Int, name : String) {
         super.init(nibName: nil, bundle: nil)
         title = name
-        
-        /*
-         
-         let label = UILabel()
-         label.text = "ScanMode"
-         label.sizeToFit()
-         
-         */
     }
     
     override func viewDidLoad() {
@@ -42,7 +34,6 @@ class CameraViewController: UIViewController {
         setupDevice()
         setupInputOutput()
         setupPreviewLayer()
-        startRunningCaptureSession()
         
     }
     
@@ -91,12 +82,18 @@ class CameraViewController: UIViewController {
 }
    
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        startRunningCaptureSession()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        captureSession.stopRunning()
+    }
 /*
- override func viewWillAppear(animated: Bool) {
- super.viewWillAppear(animated)
- // Setup your camera here...
- }
  
  overrid func viewDidAppear(animated : Bool){
  super.viewDidAppear(animated)
