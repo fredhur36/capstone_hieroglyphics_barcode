@@ -128,7 +128,11 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
                 let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
                 
                 self.navigationController?.pushViewController(secondVC, animated: true)
+                let thirdVC = storyboard.instantiateViewController(withIdentifier: "TitleDescriptionViewController") as! TitleDescriptionViewController
+                
                 secondVC.imageData = imageData
+                thirdVC.data=imageData
+                
                self.present(secondVC, animated: true, completion: nil)
                 
             }
