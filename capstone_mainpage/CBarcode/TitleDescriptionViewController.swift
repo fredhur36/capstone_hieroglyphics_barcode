@@ -84,9 +84,28 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
         }
         let myTitle : String!
         myTitle = titleTextfield.text
+        let myalert=SCLAlertView()
         
+        myalert.showTitle(
+            "Congratulations", // Title of view
+            subTitle: "Operation successfully completed.", // String of view
+            style: .success, closeButtonTitle: nil, // Styles - see below.
+            colorStyle: 0xA429FF,
+            colorTextButton: 0xFFFFFF
+            
+        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.goBackToCamera()
+        }
+
         
-        SCLAlertView().showInfo("Registered Sticker " + myTitle, subTitle: "congratulations!")
+
     }
-    
+    func goBackToCamera()
+    {
+        
+        let mainPageViewController = MainPageViewController()
+        self.present(mainPageViewController, animated: true, completion: nil)
+        
+    }
 }
