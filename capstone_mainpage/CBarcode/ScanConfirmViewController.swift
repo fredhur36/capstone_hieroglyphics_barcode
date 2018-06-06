@@ -17,17 +17,17 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
     @IBOutlet weak var ImageView: UIImageView!
     var image = UIImage()
     var imageData = Data()
+    var flag : Int = 0
     var name : String = " "
     var downloadURL : String = " "
     @IBAction func confirmButton(_ sender: Any) {
         uploadImagetoFirebase_Scan(data: imageData as NSData)
-        print("helllo!")
+       
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
           self.checkResult()
            
         }
     }
-    
     func checkResult()
     {
         let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
@@ -36,10 +36,10 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
         let searchRef = ref.child("Request").child(self.name).child("result")
         searchRef.observeSingleEvent(of: .value) { (snapshot) in
             if !snapshot.exists() {
-             print("doesn't exist")
+            
             }
             if let con = snapshot.value as? String {
-                print("con : " + con)
+               
                 if con == "empty"
                 {
                      SCLAlertView().showError("Sticker is not registered", subTitle: "cannot find the same sticker")
@@ -49,20 +49,15 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
                     }
                 }else
                 {
-                    print("hi")
                     let storyboard = UIStoryboard(name:"Main", bundle: nil)
-                    
+                    print("this is called")
                     let nextVC = storyboard.instantiateViewController(withIdentifier: "LoadMessageViewController") as! LoadMessageViewController
-                    
-                    nextVC.message = con
-                    self.present(nextVC, animated: true, completion: nil)
-                    
-                    
-                    
+                   nextVC.message = con
+                   self.present(nextVC, animated: true, completion: nil)
                 }
             }
+            
         }
-        
     }
     
     func uploadImagetoFirebase_Scan(data: NSData)

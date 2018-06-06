@@ -9,15 +9,14 @@
 import Foundation
 import UIKit
 
-class LoadMessageViewController: UIViewController  {
+class LoadMessageViewController: UIViewController {
     var message : String = " "
     
     @IBOutlet weak var textField: UITextView!
     
-    @IBAction func cancelButton(_ sender: Any) {
+    @IBAction func goBack(_ sender: Any) {
         let mainPageViewController = MainPageViewController()
         self.present(mainPageViewController, animated: true, completion: nil)
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
