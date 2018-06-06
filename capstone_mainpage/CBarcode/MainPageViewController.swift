@@ -117,6 +117,17 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
                 
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
                 
+                let storyboard = UIStoryboard(name:"Main", bundle: nil)
+                let scanVC = storyboard.instantiateViewController(withIdentifier: "ScanConfirmViewController") as! ScanConfirmViewController
+                
+                self.navigationController?.pushViewController(scanVC, animated: true)
+               // let thirdVC = storyboard.instantiateViewController(withIdentifier: "TitleDescriptionViewController") as! TitleDescriptionViewController
+                
+                scanVC.imageData = imageData
+             //   thirdVC.data=imageData
+                
+                self.present(scanVC, animated: true, completion: nil)
+                
                 print("ScanMode")
             }
             else if(currentIndex  == 1){
@@ -185,7 +196,7 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             // Write the download URL to the Realtime Database
             
             
-            let values = ["photoURL" : "\(downloadURL)", "info" : "temporary info" ] as [String : Any]
+            let values = ["photoURL" : "\(downloadURL)", "message" : "temporary info" ] as [String : Any]
             let userReference = ref.child("Stickers").child(uid)
             
             userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in

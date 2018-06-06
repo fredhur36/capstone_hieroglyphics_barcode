@@ -19,6 +19,8 @@
 		555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C41FB205E540F0021FFD4 /* LoginViewController.swift */; };
 		55E89BE720C706790055397C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BE620C706790055397C /* InfoViewController.swift */; };
 		55E89BE920C70C700055397C /* TitleDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */; };
+		55E89BEB20C7E1BE0055397C /* ScanConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BEA20C7E1BE0055397C /* ScanConfirmViewController.swift */; };
+		55E89BED20C7F3E20055397C /* LoadMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E89BEC20C7F3E20055397C /* LoadMessageViewController.swift */; };
 		9326103820B24BF700E8ED0B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103720B24BF700E8ED0B /* MainPageViewController.swift */; };
 		9326103A20B24C3900E8ED0B /* ScanModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103920B24C3900E8ED0B /* ScanModeViewController.swift */; };
 		9326103E20B24C9E00E8ED0B /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */; };
@@ -45,6 +47,8 @@
 		555C41FB205E540F0021FFD4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		55E89BE620C706790055397C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionViewController.swift; sourceTree = "<group>"; };
+		55E89BEA20C7E1BE0055397C /* ScanConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfirmViewController.swift; sourceTree = "<group>"; };
+		55E89BEC20C7F3E20055397C /* LoadMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageViewController.swift; sourceTree = "<group>"; };
 		9326103720B24BF700E8ED0B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		9326103920B24C3900E8ED0B /* ScanModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanModeViewController.swift; path = ../capstone_mainpage/ScanModeViewController.swift; sourceTree = "<group>"; };
 		9326103D20B24C9E00E8ED0B /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+constraints.swift"; path = "../capstone_mainpage/UIView+constraints.swift"; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				5553AC8C2060BE5200655CF2 /* cameraController.swift */,
 				55E89BE620C706790055397C /* InfoViewController.swift */,
 				55E89BE820C70C700055397C /* TitleDescriptionViewController.swift */,
+				55E89BEA20C7E1BE0055397C /* ScanConfirmViewController.swift */,
+				55E89BEC20C7F3E20055397C /* LoadMessageViewController.swift */,
 				555C41E9205E42C10021FFD4 /* Main.storyboard */,
 				555C41EC205E42C10021FFD4 /* Assets.xcassets */,
 				555C41EE205E42C10021FFD4 /* LaunchScreen.storyboard */,
@@ -279,11 +285,13 @@
 			files = (
 				933C255220B7AE0D00F16DC5 /* CameraViewController.swift in Sources */,
 				9326103E20B24C9E00E8ED0B /* UIView+constraints.swift in Sources */,
+				55E89BEB20C7E1BE0055397C /* ScanConfirmViewController.swift in Sources */,
 				93ADB1EC20B064910073D197 /* SWRevealViewController.m in Sources */,
 				9326103820B24BF700E8ED0B /* MainPageViewController.swift in Sources */,
 				933C252520B6754400F16DC5 /* RegisterModeViewController.swift in Sources */,
 				555C41FC205E540F0021FFD4 /* LoginViewController.swift in Sources */,
 				555C41FA205E53E50021FFD4 /* RegisterViewController.swift in Sources */,
+				55E89BED20C7F3E20055397C /* LoadMessageViewController.swift in Sources */,
 				555C41E8205E42C10021FFD4 /* LoginAndRegisterButtonController.swift in Sources */,
 				9326103A20B24C3900E8ED0B /* ScanModeViewController.swift in Sources */,
 				55E89BE920C70C700055397C /* TitleDescriptionViewController.swift in Sources */,

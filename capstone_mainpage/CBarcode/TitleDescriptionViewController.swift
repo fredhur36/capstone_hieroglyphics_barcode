@@ -71,7 +71,7 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
             // Write the download URL to the Realtime Database
         
             
-            let values = ["photoURL" : "\(downloadURL)", "info" : self.DescriptionTextField.text] as [String : Any]
+            let values = ["photoURL" : "\(downloadURL)", "message" : self.DescriptionTextField.text] as [String : Any]
             let userReference = ref.child("Stickers").child(uid).child("\(self.count)")
             
             userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
