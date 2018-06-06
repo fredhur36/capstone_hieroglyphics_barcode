@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import SCLAlertView
 
 class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var titleTextfield: UITextView!
@@ -81,5 +82,11 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
                 
             })
         }
+        let myTitle : String!
+        myTitle = titleTextfield.text
+        
+        
+        SCLAlertView().showInfo("Registered Sticker " + myTitle, subTitle: "congratulations!")
     }
+    
 }
