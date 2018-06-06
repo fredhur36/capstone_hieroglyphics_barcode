@@ -116,13 +116,11 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             if(currentIndex == 0 ){
                 
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
-                uploadImagetoFirebase_Scan(data: imageToSend as NSData)
                 
                 print("ScanMode")
             }
             else if(currentIndex  == 1){
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
-                uploadImagetoFirebase_Create(data: imageToSend as NSData)
                 
                 let storyboard = UIStoryboard(name:"Main", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController

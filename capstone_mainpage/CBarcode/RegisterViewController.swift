@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
                 let uid = user?.uid
                 
                 let userReference = ref.child("Users").child(uid!)
-                let values = ["email" : self.IDText.text]
+                let values = ["email" : self.IDText.text, "count" : 0] as [String : Any]
                 userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
                     if err != nil {
                         print(err)

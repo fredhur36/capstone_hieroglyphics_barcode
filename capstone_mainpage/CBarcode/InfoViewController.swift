@@ -16,6 +16,11 @@ class InfoViewController: UIViewController, AVCapturePhotoCaptureDelegate  {
     var imageData = Data()
     
     
+    @IBAction func cancelButton(_ sender: Any) {
+        let mainPageViewController = MainPageViewController()
+        self.present(mainPageViewController, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
          ImageView.image = UIImage(data : imageData)
