@@ -1,32 +1,49 @@
 import urllib.request
+from  urllib.error  import HTTPError
 import glob
 import requests
 import json
 import os
-
+import time
 
 dataSize = 0
 
-firebase_url = "https://test1-897a6.firebaseio.com/" # URL of Database
+firebase_url = "https://custombarcode-3b747.firebaseio.com/" # URL of Database
 table = "Stickers"
-r = requests.get(firebase_url + table + ".json")
-data = json.loads(r.text)
-base_path = "C:/Users/Hye-lee/Desktop"
+
+base_path = "C:\\Users\\Hye-lee\\Desktop\\Capstone"
 
 while True :
-    if dataSize > len(str(data)) :
-        continue
+    try :
+        r = requests.get(firebase_url + table + ".json", headers={'user-agent': 'Mozilla/5.0'}, cookies={'session_id': 'sorryidontcare'})
+        data = json.loads(r.text)
 
-    directories = glob.glob(base_path)
-    for user, stickers in data.items() :
-        print(user)
-        print(len(stickers))
-        print()
-        files =  glob.glob(base_path  + '/' +user +'/' + '*')
-        if len(stickers) == len(files) :
+        if dataSize >= len(str(data)) :
             continue
-        else :
-            for sticker in stickers :
-                urllib.request.urlretrieve(stickers[sticker]['URL'], base_path + '/' + user + "/" + sticker + '.jpg')  # download the photo user sent to the folder of userKey
+        dataSize = len(str(data))
+        directories = glob.glob(base_path + '\\**\\')
+        ##print(directories)
+        for user, stickers in data.items() :
+            user_dir = base_path + '\\' + user + '\\'
+            if user_dir not in directories :
+                os.mkdir(user_dir)
+            #print(user)
+            print(stickers)
+            files = glob.glob(user_dir + '*')
+            if len(stickers)-1 == len(files) :
+                continue
+            else :
+                index = 1
+                for sticker in stickers:
+                    try:
+                        print(sticker['photoURL'])
+                        file_path = user_dir + str(index) + '.jpg'
+                        print(file_path)
+                        urllib.request.urlretrieve(sticker['photoURL'], file_path)  # download the photo user sent to the folder of userKey
+                        index = index + 1
+                    except TypeError :
+                        pass
+    except urllib.error.HTTPError :
+        pass
 
-    break
+    time.sleep(2)
