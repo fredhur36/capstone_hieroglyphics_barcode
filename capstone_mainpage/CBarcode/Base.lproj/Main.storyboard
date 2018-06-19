@@ -512,10 +512,10 @@
             </objects>
             <point key="canvasLocation" x="1029.5999999999999" y="1551.2743628185908"/>
         </scene>
-        <!--TitleDescriptionViewController-->
+        <!--CheckRegisterViewController-->
         <scene sceneID="wFh-h4-xGm">
             <objects>
-                <viewController storyboardIdentifier="TitleDescriptionViewController" title="TitleDescriptionViewController" id="jKt-uC-Z4s" customClass="TitleDescriptionViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CheckRegisterViewController" storyboardIdentifier="CheckRegisterViewController" title="CheckRegisterViewController" id="jKt-uC-Z4s" customClass="CheckRegisterViewController" customModule="CBarcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2G-WY-Ccp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,8 +633,8 @@
                     <navigationItem key="navigationItem" id="iyF-xp-fwU"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="DescriptionTextField" destination="akT-xI-JXK" id="OsS-0H-6Ja"/>
-                        <outlet property="titleTextfield" destination="xDx-Ot-3wc" id="Uke-hi-H6D"/>
+                        <outlet property="DescriptionText" destination="akT-xI-JXK" id="MAY-GR-PFC"/>
+                        <outlet property="titleTextfield" destination="xDx-Ot-3wc" id="z4I-ej-fmy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wge-9l-sTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

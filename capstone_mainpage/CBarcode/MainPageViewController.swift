@@ -110,6 +110,13 @@ class MainPageViewController: UIViewController {
 
 extension MainPageViewController : AVCapturePhotoCaptureDelegate{
     func photoOutput(_ ouput: AVCapturePhotoOutput, didFinishProcessingPhoto photo : AVCapturePhoto, error: Error?){
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+        let scanVC = storyboard.instantiateViewController(withIdentifier: "ScanConfirmViewController") as! ScanConfirmViewController
+        let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        let registerVC = storyboard.instantiateViewController(withIdentifier: "CheckRegisterViewController") as! CheckRegisterViewController
+        
+        
+        
         if let imageData = photo.fileDataRepresentation(){
             image = UIImage(data : imageData)
             print(image)
@@ -117,15 +124,8 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
                 
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
                 
-                let storyboard = UIStoryboard(name:"Main", bundle: nil)
-                let scanVC = storyboard.instantiateViewController(withIdentifier: "ScanConfirmViewController") as! ScanConfirmViewController
-                
-                self.navigationController?.pushViewController(scanVC, animated: true)
-               // let thirdVC = storyboard.instantiateViewController(withIdentifier: "TitleDescriptionViewController") as! TitleDescriptionViewController
-                
                 scanVC.imageData = imageData
-             //   thirdVC.data=imageData
-                
+              
                 self.present(scanVC, animated: true, completion: nil)
                 
                 print("ScanMode")
@@ -133,16 +133,14 @@ extension MainPageViewController : AVCapturePhotoCaptureDelegate{
             else if(currentIndex  == 1){
                 imageToSend = UIImageJPEGRepresentation(image!, 0.8)! as NSData
                 
-                let storyboard = UIStoryboard(name:"Main", bundle: nil)
-                let secondVC = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-                
-                self.navigationController?.pushViewController(secondVC, animated: true)
-                let thirdVC = storyboard.instantiateViewController(withIdentifier: "TitleDescriptionViewController") as! TitleDescriptionViewController
-                
+                registerVC.imageData = imageData
                 secondVC.imageData = imageData
-                thirdVC.data=imageData
                 
-               self.present(secondVC, animated: true, completion: nil)
+                
+               self.navigationController?.pushViewController(registerVC, animated: true)
+                
+             //   uploadImagetoFirebase_Create(data: imageData as NSData)
+               self.present(registerVC, animated: true, completion: nil)
                 
             }
             //show the image

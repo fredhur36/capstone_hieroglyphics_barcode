@@ -23,7 +23,7 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
     @IBAction func confirmButton(_ sender: Any) {
         uploadImagetoFirebase_Scan(data: imageData as NSData)
        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
           self.checkResult()
            
         }
@@ -65,8 +65,10 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
         let uid = Auth.auth().currentUser!.uid
         let imageName = NSUUID().uuidString
         self.name = imageName
+        print("self name in uploadImage: " + self.name)
+        
         let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
-        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        let storageRef = Storage.storage().reference(withPath: "/Scan" + "/"  +  "\(imageName)")
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/png"
         storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
@@ -87,9 +89,7 @@ class ScanConfirmViewController: UIViewController, AVCapturePhotoCaptureDelegate
                 
             })
         }
-        
-        
-        
+    
     }
     @IBAction func cancelButton(_ sender: Any) {
         let mainPageViewController = MainPageViewController()

@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Foundation
+import AVFoundation
 import Parchment
 import AVFoundation
 class InfoViewController: UIViewController, AVCapturePhotoCaptureDelegate  {
@@ -23,6 +24,8 @@ class InfoViewController: UIViewController, AVCapturePhotoCaptureDelegate  {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+    
          ImageView.image = UIImage(data : imageData)
         
     }

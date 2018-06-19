@@ -1,28 +1,37 @@
 //
-//  TitleDescriptionViewController.swift
+//  CheckRegisterViewController.swift
 //  CBarcode
 //
-//  Created by Se Jin Lee on 06/06/2018.
+//  Created by Se Jin Lee on 10/06/2018.
 //  Copyright © 2018 Se Jin Lee. All rights reserved.
 //
 
-import UIKit
+
+
+
+import Foundation
 import Firebase
 import FirebaseStorage
+import UIKit
 import SCLAlertView
-
-class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
-    @IBOutlet weak var titleTextfield: UITextView!
-    @IBOutlet weak var DescriptionTextField: UITextView!
-    var data = Data()
+import Parchment
+import AVFoundation
+class CheckRegisterViewController: UIViewController, AVCapturePhotoCaptureDelegate, UITextViewDelegate  {
+    var imageData = Data()
+    var Str : String = " "
     
+    @IBOutlet weak var titleTextfield: UITextView!
+    @IBOutlet weak var DescriptionText: UITextView!
     var count = 0;
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        titleTextfield.delegate = self
-        DescriptionTextField.delegate = self
-     //   self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: Selector("dismissKeyboard")))
+        print("The result + \(Str)")
+        DescriptionText.delegate = self
+        titleTextfield.delegate = self 
+      //  De.delegate = self
+      //
+        //title.delegate = self
+        //   self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: Selector("dismissKeyboard")))
     }
     @IBAction func cancelButtonClicked(_ sender: Any) {
         let mainPageViewController = MainPageViewController()
@@ -32,8 +41,8 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"
         {
-            titleTextfield.resignFirstResponder()
-            DescriptionTextField.resignFirstResponder()
+            DescriptionText.resignFirstResponder()
+           titleTextfield.resignFirstResponder()
             return false
         }
         return true
@@ -42,12 +51,39 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
     }
     @IBAction func registerButtonClicked(_ sender: Any) {
+        self.uploadImagetoFirebase_Create(data: imageData as NSData!)
         
+        
+    }
+    
+    func uploadImagetoFirebase_Create(data: NSData)
+    {
         let uid = Auth.auth().currentUser!.uid
         let imageName = NSUUID().uuidString
         let ref = Database.database().reference(fromURL: "https://custombarcode-3b747.firebaseio.com/")
-        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/" +  "\(imageName)")
+        let storageRef = Storage.storage().reference(withPath: "/\(uid)" + "/"  +  "\(imageName)")
         let searchRef = ref.child("Users").child(uid).child("count")
+        var downloadURL : String = " "
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/png"
+        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
+            // When the image has successfully uploaded, we get it's download URL
+            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
+            // Write the download URL to the Realtime Database
+            
+             //self.DescriptionTextField.text
+            let values = ["photoURL" : "\(downloadURL)", "message" : self.DescriptionText.text ] as [String : Any]
+            let userReference = ref.child("Stickers").child(uid).child("\(self.count)")
+            
+            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if err != nil {
+                    return
+                }
+                print()
+                
+            })
+        }
+        
         searchRef.observeSingleEvent(of: .value) { (snapshot) in
             if !snapshot.exists() {
                 return
@@ -62,28 +98,6 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
         }
         
         
-        var downloadURL : String = " "
-        let uploadMetadata = StorageMetadata()
-        uploadMetadata.contentType = "image/png"
-        storageRef.putData(data as Data, metadata: uploadMetadata).observe(.success) { (snapshot) in
-            // When the image has successfully uploaded, we get it's download URL
-            downloadURL = (snapshot.metadata?.downloadURL()?.absoluteString)!
-            // Write the download URL to the Realtime Database
-        
-            
-            let values = ["photoURL" : "\(downloadURL)", "message" : self.DescriptionTextField.text] as [String : Any]
-            let userReference = ref.child("Stickers").child(uid).child("\(self.count)")
-            
-            userReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
-                if err != nil {
-                    return
-                }
-                print()
-                
-            })
-        }
-        let myTitle : String!
-        myTitle = titleTextfield.text
         let myalert=SCLAlertView()
         
         myalert.showTitle(
@@ -94,13 +108,14 @@ class TitleDescriptionViewController: UIViewController, UITextViewDelegate {
             colorTextButton: 0xFFFFFF
             
         )
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.goBackToCamera()
         }
-
         
-
+        
     }
+    
     func goBackToCamera()
     {
         
