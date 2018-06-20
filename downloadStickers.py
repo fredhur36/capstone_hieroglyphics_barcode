@@ -6,6 +6,9 @@ import json
 import os
 import time
 
+## In other computer, change the base path
+# Make a directory named "Captone"
+
 dataSize = 0
 
 firebase_url = "https://custombarcode-3b747.firebaseio.com/" # URL of Database
@@ -45,5 +48,6 @@ while True :
                         pass
     except urllib.error.HTTPError :
         pass
-
+    except TypeError :
+        pass
     time.sleep(2)
