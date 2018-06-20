@@ -33,24 +33,29 @@ while True :
             file_path = base_path + "\\" + userKey
 
             urllib.request.urlretrieve(rPhoto, file_path + '\\' + file_name) # download the photo user sent to the folder of userKey
-
-
+            print("Download")
             ##### Image Comparison ####
             #Find the sticker that is the same with photo user sent.
             # if found -> return the stickerKey
             # else -> return some kind of error message.(It sohould be compatible with stickerKey
             # Assumed that the names of stickers are stickerKey(Unique ID)
 
-
+            print("now we get the stickerKey")
+            #stickerKey = '3'
             stickerKey = compareImages.findMatch(userKey, rPhoto) # get the stickerKey that matches with the photo.
-            os.remove(file_name) # remove the photo user sent
+            os.remove(file_path + '\\' + file_name) # remove the photo user sent
             #os.chdir('..')  # back to the root directory
 
-            print(stickerKey)
+            stickerInfo = requests.get(firebase_url + "Stickers/" + userKey + "/" + stickerKey + ".json", headers={'user-agent': 'Mozilla/5.0'}, cookies={'session_id': 'sorryidontcare'})
+            print(stickerInfo.text)
+            stickerInfo = json.loads(stickerInfo.text)
+            result = stickerInfo['message']
+
+            print(result)
             ##stickerKey = 'test result'
 
             #Update the result
-            resp = requests.patch(f'{firebase_url}/{table}/{re}.json', data=json.dumps({'result' : stickerKey}))
+            resp = requests.patch(f'{firebase_url}/{table}/{re}.json', data=json.dumps({'result' : result}))
             ##print(resp)
             ##print(resp.text)
     except HTTPError :
